@@ -1,0 +1,68 @@
+
+html.intro body {
+    background:url("cubes.png");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.case-example body {
+    background:url("lego_bricks_by_713_avenue.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.implementation body {
+    background:url("java_code_by_pheaber.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.linked-list body {
+    background:url("old_chain_by_Mschel.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.intro h1, h2, h3, p {
+    background-color: rgba(255,255,255,0.8);
+}
+
+html.case-example h1, h2, h3, p {
+    background-color: rgba(255,255,255,0.8);
+}
+
+html.intro ul, ol {
+    background-color: rgba(255,255,255,0.8);
+    list-style-position: inside;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+html.case-example ul, ol {
+    background-color: rgba(255,255,255,0.8);
+    list-style-position: inside;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+#lego-mosaic {
+/* Prevent vertical gaps */
+   line-height: 0;
+
+   -webkit-column-count: 6;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    6;
+   -moz-column-gap:      0px;
+   column-count:         6;
+   column-gap:           0px;    
+}
+
+#lego-mosaic img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  border: 0px;
+  margin: 0px 0px;
+  box-shadow: 0 0;
+  max-width: 100%;
+}

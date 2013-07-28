@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Ingeniería de Software</title>
+
+		<meta name="description" content="Programación Orientada a Objetos - Ingeniería de Software">
+		<meta name="author" content="Diego Munguía">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="/reveal.js/css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="01-ingenieria_software/custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="/reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Ingeniería de Software</h1>
+					<h3>Programación Orientada a Objetos</h3>
+				</section>
+
+				<section>
+					<section>
+						<h1>caracterización</h1>
+					</section>
+					<section>
+						<h2>¿porqué existe?</h2>
+						<ul>
+							<li>permite construir sistemas o productos cada vez tan grandes y complejos que deben ser trabajados por un equipo,</li>
+							<li>desarrollados y entregados rápidamente,</li>
+							<li>resistentes a fallos,</li>
+							<li>capaces de manejar grandes volúmenes de datos y transacciones,</li>
+							<li>adaptables a cambios, mejoras y arreglos con relativa facilidad,</li>
+							<li>todo con garantía de un funcionamiento correcto.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>software fallido</h2>
+						<ul>
+							<li>muchos casos de sistemas que nunca son terminados o que ya son obsoletos al momento de ser entregados</li>
+							<li>sistemas de tan baja calidad que no son confiables y por tanto caen en desuso</li>
+							<li>los equipos gastan el presupuesto antes de finalizar (mala estimación, mala ejecución)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>posibles causas:</h2>
+						<ul>
+							<li>nunca se supo qué hacía el sistema o producto</li>
+							<li>ingeniería exagerada (<em>over-engineering</em>)</li>
+							<li>no hubo control de calidad</li>
+							<li>no hubo estandarización a la hora de escribir el código</li>
+							<li>mala comunicación a lo interno del equipo</li>
+							<li>no hubo equipo, sólo un héroe solitario</li>
+							<li>se escogieron las tecnologías equivocadas</li>
+							<li>se dio una graduación tempranera de prototipos a sistemas</li>
+						</ul>
+					</section>
+
+					<section>
+						<p>la ingeniería de software es una disciplina que permite el desarrollo de productos y sistemas de software de manera industrial</p>
+					</section>
+
+					<section>
+						<h2>buen software:</h2>
+						<ul>
+							<li>cumple con la funcionalidad y rendimiento requeridos,</li>
+							<li>además es mantenible,</li>
+							<li>confiable,</li>
+							<li>y utilizable.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>ingeniería de software != <br/> ciencias de la computación</h2>
+						<p>las ciencias de la computación se enfocan en los fundamentos y teoría de la computación; la ingeniería de software se ocupa de los aspectos prácticos del desarrollo de software</p>
+					</section>
+
+					<section>
+						<h2>ingeniería de software != <br/> ingeniería de sistemas</h2>
+						<p>la ingeniería de sistemas se ocupa de todos los aspectos de hardware, software y procesos involucrados en los sistemas basados en computadoras; la ingeniería de software es una parte de este proceso más general</p>
+					</section>
+
+					<section>
+						<h2>ingeniería</h2>
+						<p>los ingenieros ponen las cosas a funcionar!, aplican teorías, métodos y herramientas según sea apropiado;</p>
+						<p>sin embargo deben ser selectivos y tratar de descubrir soluciones a problemas aun cuando no hayan teorías o métodos aplicables;</p>
+						<p>deben trabajar dentro de restricciones organizacionales y financieras.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>principios</h1>
+					</section>
+					<section>
+						<p>un proceso de desarrollo adecuado ayudará a obtener un buen producto, sin embargo el producto deseado también afectará la decisión de cuál proceso se debe utilizar; por tanto los principios de la ingeniería de software tienen que ver tanto con el proceso de desarrollo como con el producto final</p>
+					</section>
+					<section>
+						<ul>
+							<li>rigor y formalidad</li>
+							<li>separación de aspectos</li>
+							<li>modularidad</li>
+							<li>abstracción</li>
+							<li>anticipación de cambios</li>
+							<li>generalidad</li>
+							<li>incrementabilidad</li>
+						</ul>
+					</section>
+					<section>
+						<h2>rigor y formalidad</h2>
+						<ul>
+							<li>rigor: precisión y exactitud</li>
+							<li>la ingeniería de software es una actividad de diseño creativo,</li>
+							<li>que debe ser practicada sistemáticamente!</li>
+							<li>formalidad es rigor en su máxima expresión: guiada por leyes matemáticas, supone la base para la mecanización del proceso</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplos de rigor y formalidad en el producto</h3>
+						<ul>
+							<li>(formalidad) estandarización de la codificación</li>
+							<li>(rigor) desarrollo de pruebas unitarias con un alto porcentaje de cobertura</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplos de rigor y formalidad en el proceso</h3>
+						<ul>
+							<li>(rigor) documentación detallada de todos los pasos para instalar y configurar el producto, actualizada con cada nuevo cambio o mejora introducidos</li>
+							<li>(formalidad) sistema de rastreo de tareas</li>
+						</ul>
+					</section>
+					<section>
+						<h2>separación de aspectos</h2>
+						<ul>
+							<li>divide y conquista</li>
+							<li>para sobreponerse a la complejidad, separe los diferentes aspectos involucrados en el problema para poder concetrarse en uno a la vez</li>
+							<li>ayuda a la paralelización de esfuerzos y la separación de responsabilidades</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplo de separación de aspectos en el producto</h3>
+						<ul>
+							<li><em>front-end</em> y <em>back-end</em>, algunos miembros del equipo se enfocan en el desarrollo de la interacción con el usuario, mientras que otros se enfocan en los servicios de almacenamiento y recuperación de datos</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplo de separación de aspectos en el proceso</h3>
+						<ul>
+							<li>separación del proceso en etapas, ej: wireframe, prototipo, desarrollo, validación, wireframe</li>
+						</ul>
+					</section>
+					<section>
+						<h2>modularidad</h2>
+						<ul>
+							<li>división del sistema en piezas más simples llamadas módulos</li>
+							<li>cada módulo debe ser altamente cohesivo: cada módulo es una unidad funcional significativa</li>
+							<li>los módulos deben ser desacoplados: reducida interdependencia entre módulos, se deben poder comprender separadamente y los puntos de integración deben ser mínimos y centralizados</li>
+							<li>relacionado con separación de aspectos (aunque un módulo usualmente involucra más de un aspecto)</li>
+							<li>(diagrama alta cohesión/bajo acoplamiento)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplo de modularidad en el proceso</h3>
+						<ul>
+							<li>separación de roles en el equipo de desarrollo, ej: desarrolladores, ingenieros de calidad, líder técnico, administrador de proyecto</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplo de modularidad en el producto</h3>
+						<ul>
+							<li>una tienda en línea puede constar del catálogo que el comprador navega,</li>
+							<li>el carrito de compras que contiene lo que el comprador se llevará así como la funcionalidad para pago y solicitud de envío,</li>
+							<li>un módulo para revisión del historial de órdenes del comprador,</li>
+							<li>un módulo para la administración del inventario y categorización de los productos del catálogo</li>
+							<li>...</li>
+						</ul>
+					</section>
+					<section>
+						<h2>abstracción</h2>
+						<ul>
+							<li>identificar los aspectos clave de un fenómeno e ignorar los detalles</li>
+							<li>la abstracción produce modelos</li>
+							<li>en última instancia el sistema o producto modela el problema que se quiere solucionar</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplo de abstracción en el proceso</h3>
+						<ul>
+							<li>comunicación dentro del equipo</li>
+							<li>escenario: en una reunión diaria los desarrolladores comunican al líder y administrador el avance en sus tareas (hay progreso o está estancado, necesita ayuda, estimados de tiempo)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplo de abstracción en el producto</h3>
+						<ul>
+							<li>el diseño del modelo de datos de un sistema de información</li>
+						</ul>
+					</section>
+					<section>
+						<h2>anticipación de cambios</h2>
+						<ul>
+							<li>para permitir la evolución del software es necesario anticipar posibles cambios futuros</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplo de anticipación en el proceso</h3>
+						<ul>
+							<li>el administrador debe ser capaz de manejar el calendario, pues inicia con un estimado y problemas inesperados pueden retrasar la terminación de tareas</li>
+						</ul>
+					</section>
+					<section>
+						<h3>ejemplo de anticipación en el producto</h3>
+						<ul>
+							<li>internacionlización: externalizar todos los textos de una interfaz de usuario en un archivo de configuración, previendo la posibilidad de que la interfaz deba ser traducida a diferentes idiomas</li>
+						</ul>
+					</section>
+					<section>
+						<h2>generalidad</h2>
+						<ul>
+							<li>al resolver un problema particular siempre es recomendado preguntarse si éste es más bien una instancia de un problema más general cuya solución pueda ser reutilizada en otros casos</li>
+							<li>peligro! ingeniería exagerada: se debe hacer un balance cuidadoso entre rendimiento y costo</li>
+						</ul>
+					</section>
+					<section>
+						<h2>incrementabilidad</h2>
+						<ul>
+							<li>proceder en pasos secuenciales</li>
+							<li>(proceso) entregar subconjuntos de funcionalidad para obtener retroalimentación de los usuarios y agregar nuevos <em>features</em> incrementalmente</li>
+							<li>(producto) lidiar primero con la funcionalidad requerida, luego preocuparse por la optimización del rendimiento</li>
+						</ul>
+					</section>
+					<section>
+						<p>estos principios se llevan a la práctica a través de métodos y técnicas (metodología ~ una manera de hacer las cosas); las metodologías se hacen cumplir a través de herramientas</p>
+						<ul>
+							<li>JIRA</li>
+							<li>Git</li>
+							<li>Spring Framework</li>
+						</ul>
+					</section>
+					<section>
+						<h2>caso de estudio: plataforma para publicación editorial</h2>
+					</section>
+				</section>
+				<section>
+					<h1>roles</h1>
+				</section>
+				<section>
+					<h1></h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="/reveal.js/lib/js/head.min.js"></script>
+		<script src="/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Programación Orientada a Objetos</title>
+
+		<meta name="description" content="Introducción a la programación - Breve introducción al paradigma OO">
+		<meta name="author" content="Diego Munguía">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="/reveal.js/css/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="15-oop/custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="/reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Programación Orientada a Objetos</h1>
+					<h3>Introducción a la programación</h3>
+				</section>
+
+				<section data-state="intro">
+					<h2>el paradigma OO</h2>
+					<p>los objetos son un tipo de estructuras de datos compuestos de:</p>
+					<ul>
+						<li>una serie de <em>propiedades</em> (datos) </li>
+						<li>y un conjunto de <em>métodos</em> aplicables sobre las propiedades (funcionalidad)</li>
+					</ul>
+				</section>
+
+				<section data-state="intro">
+					<h2>dinámica de objetos</h2>
+					<ul>
+						<li>un objeto puede invocar métodos de otros objetos</li>
+						<li>un objeto puede ser una propiedad de otro objeto</li>
+					</ul>
+				</section>
+
+				<section data-state="intro">
+					<p>dentro de este paradigma, un programa consiste de un conjunto de objetos interactúando entre si</p>
+				</section>
+
+				<section data-state="intro">
+					<section data-state="intro">
+						<h2>modelamiento</h2>
+						<p>dentro de este paradigma, el modelamiento toma especial importancia</p>
+					</section>
+					<section data-state="intro">
+						<p>para diseñar una clase de objetos es necesario discriminar detalles, es decir, determinar cuáles propiedades serán importantes y cuáles no, cuáles funciones sobre estas propiedades son importantes y cuáles no</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-state="case-example">
+						<h2>modelando lego bricks</h2>
+					</section>
+					<section id="lego-mosaic">
+						<img src="15-oop/beige_4x4_by_tjjohn12.jpg"/>
+						<img src="15-oop/blue_2x1_by_tjjohn12.jpg"/>
+						<img src="15-oop/red_2x1_by_tjjohn12.jpg"/>
+						<img src="15-oop/red_2x4_by_tjjohn12.jpg"/>
+						<img src="15-oop/yellow_3x1_by_tjjohn12.jpg"/>
+						<img src="15-oop/yellow_4x1_by_tjjohn12.jpg"/>
+					</section>
+					<section data-state="case-example">
+						<p>propiedades</p>
+						<ul>
+							<li>color (azul, rojo, amarillo, gris, ...)</li>
+							<li>dimensiones (1x1, 2x4, 1x4, ...)</li>
+							<li>altura (1, 3, ...)</li>
+						</ul>
+					</section>
+					<section data-state="case-example">
+						<p>funciones</p>
+						<ul>
+							<li>conectar</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section data-state="implementation">
+						<h2>implementación</h2>
+					</section>
+					<section>
+						<h2>clase y propiedades</h2>
+						<ul>
+							<li>una clase se puede entender como una plantilla o molde de un tipo de objetos</li>
+						</ul>
+						<pre><code data-trim contenteditable>
+class LegoBrick:
+    color = None
+    dimensiones = None
+    altura = None
+						</code></pre>
+						<pre><code data-trim contenteditable>
+>>> LegoBrick
+<class __main__.LegoBrick at 0x10c957258>
+						</code></pre>
+					</section>		
+					<section>
+						<h2>instancias</h2>
+						<ul>
+							<li>se puede entender una instancia como una realización concreta de una clase abstracta</li>
+							<li>una instancia es un objeto</li>
+						</ul>
+						<pre><code data-trim contenteditable>
+>>> mi_bloque = LegoBrick()
+>>> mi_bloque
+<__main__.LegoBrick instance at 0x10bdda2d8>
+>>> mi_bloque.color = 'rojo'
+>>> mi_bloque.color
+'rojo'
+						</code></pre>
+					</section>	
+					<section>
+						<h2>tipo de datos</h2>
+						<ul>
+							<li>una clase, una vez definida e interpretada, se considera un tipo de datos</li>
+						</ul>
+						<pre><code data-trim contenteditable>
+>>> isinstance(mi_bloque, int)
+False
+>>> isinstance(mi_bloque, LegoBrick)
+True
+						</code></pre>
+					</section>	
+					<section>
+						<h2>constructor</h2>
+						<ul>
+							<li>función especial de toda clase de objetos</li>
+							<li>permite crear nuevas instancias de una clase</li>
+							<li>cuando es invocado crea la nueva instancia y puede inicializar sus datos</li>
+						</ul>
+						<pre><code data-trim contenteditable>
+class LegoBrick:
+    color = None
+    dimensiones = None
+    altura = None
+
+    def __init__(self, color_inicial, dimensiones_iniciales, 
+                 altura_inicial):
+    	self.color = color_inicial
+    	self.dimensiones = dimensiones_iniciales
+    	self.altura = altura_inicial
+						</code></pre>
+					</section>	
+					<section>
+						<ul>
+							<li>para instanciar un nuevo objeto se debe invocar su constructor pasando todos los argumentos necesarios</li>
+						</ul>
+						<pre><code data-trim contenteditable>
+>>> mi_bloque = LegoBrick('rojo', (4, 1), 1)
+>>> mi_bloque
+<__main__.LegoBrick instance at 0x10687e8c0>
+>>> mi_bloque.color
+'rojo'
+>>> mi_bloque.dimensiones
+(4, 1)						
+>>> mi_bloque.altura
+1
+						</code></pre>
+					</section>
+					<section>
+						<ul>
+							<li>toda clase tiene al menos un constructor</li>
+							<li>cuando no se define explícitamente, python provee un constructor default que no toma ningún argumento y que sólo crea la instancia sin inicializar dato alguno</li>
+						</ul>
+						<pre><code data-trim contenteditable>
+class LegoBrick:
+    color = None
+    dimensiones = None
+    altura = None
+						</code></pre>
+						<pre><code data-trim contenteditable>
+>>> mi_bloque = LegoBrick()
+>>> mi_bloque
+<__main__.LegoBrick instance at 0x10bdda2d8>
+>>> mi_bloque.color == None
+True
+						</code></pre>
+					</section>
+					<section>
+						<ul>
+							<li>una vez definido un constructor, ya no se puede utilizar el constructor default</li>
+						</ul>	
+						<pre><code data-trim contenteditable>
+class LegoBrick:
+    color = None
+    dimensiones = None
+    altura = None
+
+    def __init__(self, color_inicial, dimensiones_iniciales, 
+                 altura_inicial):
+    	self.color = color_inicial
+    	self.dimensiones = dimensiones_iniciales
+    	self.altura = altura_inicial
+						</code></pre>
+						<pre><code data-trim contenteditable>
+>>> mi_bloque = LegoBrick()
+
+Traceback (most recent call last):
+  File "pyshell#16", line 1, in module
+    mi_bloque = LegoBrick()
+TypeError: __init__() takes exactly 4 arguments (1 given)
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>métodos</h2>
+						<ul>
+							<li>los métodos son funciones declaradas dentro de la clase</li>
+							<li>los métodos sólo pueden ser invocados desde una instancia particular</li>
+						</ul>	
+						<pre><code data-trim contenteditable>
+class LegoBrick:
+    color = None
+    dimensiones = None
+    altura = None
+
+    def __init__(self, color_inicial, dimensiones_iniciales, 
+                 altura_inicial):
+    	self.color = color_inicial
+    	self.dimensiones = dimensiones_iniciales
+    	self.altura = altura_inicial
+
+    def conectar(self, otroLegoBrick):
+        print 'El bloque ' + str(self) + 
+              ' esta conectado con el bloque ' + str(otroLegoBrick)
+						</code></pre>
+						<pre><code data-trim contenteditable>
+>>> bloque1 = LegoBrick('rojo', (4,2), 3)
+>>> bloque2 = LegoBrick('azul', (1,1), 1)
+>>> bloque1.conectar(bloque2)
+El bloque <__main__.LegoBrick instance at 0x100c86d40> esta conectado 
+con el bloque <__main__.LegoBrick instance at 0x100c868c0>
+						</code></pre>
+					</section>
+					<section>
+						<ul>
+							<li>el método <code>conectar()</code> sólo existe en el contexto de una instancia</li>
+						</ul>
+						<pre><code data-trim contenteditable>
+>>> conectar
+Traceback (most recent call last):
+  File "pyshell#31", line 1, in module
+    conectar
+NameError: name 'conectar' is not defined
+>>> bloque1.conectar
+bound method LegoBrick.conectar of __main__.LegoBrick instance 
+at 0x100c86d40
+						</code></pre>
+					</section>
+					<section>
+						<ul>
+							<li>al estar dentro del mismo contexto, los métodos tienen acceso a las propiedades de su misma clase</li>
+							<li>las propiedades se accesan a través del objeto self (una referencia a si mismo)</li>
+						</ul>
+						<pre><code data-trim contenteditable style="max-height: 100%;">
+class LegoBrick:
+    color = None
+    dimensiones = None
+    altura = None
+    conexiones = []
+
+    def __init__(self, color_inicial, dimensiones_iniciales, 
+                 altura_inicial):
+    	self.color = color_inicial
+    	self.dimensiones = dimensiones_iniciales
+    	self.altura = altura_inicial
+
+    def __str__(self):
+    	return ('[' + self.color + ', ' + str(self.dimensiones) +
+                ', ' + str(self.altura) + ']')
+
+    def conectar(self, otroLegoBrick):
+        self.conexiones.append(otroLegoBrick)
+
+    def ver_conexiones(self):
+        for brick in self.conexiones:
+            print brick
+						</code></pre>	
+					</section>
+					<section>
+						<pre><code data-trim contenteditable>
+>>> b1 = LegoBrick('rojo', (3,3), 1)
+>>> b2 = LegoBrick('azul', (3,2), 3)
+>>> b3 = LegoBrick('verde', (1,4), 1)
+>>> b1.conectar(b2)
+>>> b1.conectar(b3)
+>>> b1.ver_conexiones()
+'[azul, (3, 2), 3]'
+'[verde, (1, 4), 1]'
+						</code></pre>
+					</section>
+					<section>
+						<ul>
+							<li>cuando se invoca un método, python resuelve automáticamente el argumento <code>self</code></li>
+						</ul>
+						<pre><code data-trim contenteditable>
+def conectar(self, otroLegoBrick):
+    self.conexiones.append(otroLegoBrick)
+						</code></pre>
+						<pre><code data-trim contenteditable>
+>>> b1 = LegoBrick('rojo', (3,3), 1)
+>>> b2 = LegoBrick('azul', (3,2), 3)
+>>> b3 = LegoBrick('verde', (1,4), 1)
+>>> b1.conectar(b2)
+						</code></pre>
+						<p>es lo mismo que:</p>
+						<pre><code data-trim contenteditable>
+>>> LegoBrick.conectar(b1, b2)
+						</code></pre>
+					</section>
+					<section>
+						<h2>representacion en hilera</h2>
+						<ul>
+							<li>es común trabajar con representaciones en hilera de objetos</li>
+							<li>
+								la representación en hilera por defecto de un objeto es
+								<pre><code data-trim contenteditable>
+<__main__.LegoBrick instance at 0x10ab2c758>
+								</code></pre>
+							</li>
+							<li>
+								esta representación puede ser modificada a través del método especial <code>__str__</code>
+								<pre><code data-trim contenteditable>
+def __str__(self):
+	return ('[' + self.color + ', ' + str(self.dimensiones) +
+            ', ' + str(self.altura) + ']')
+								</code></pre>
+								<pre><code data-trim contenteditable>
+>>> b1 = LegoBrick('rojo', (3,3), 1)
+>>> print b1
+'[rojo, (3, 3), 1]'
+								</code></pre>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-state="linked-list">
+						<h2>lista enlazada</h2>
+					</section>
+					<section>
+						<img src="15-oop/lista-enlazada.png"/>
+					</section>
+					<section>
+						<h2>clase Nodo</h2>
+						<pre><code data-trim contenteditable>
+class Nodo:
+    elemento = None
+    siguiente = None
+
+    def __init__(self, elem):
+        self.elemento = elem
+
+    def __str__(self):
+        return str(self.elemento)
+						</code></pre>
+						<pre><code data-trim contenteditable>
+>>> nodo = Nodo(5)
+>>> print nodo
+5
+>>> nodo.elemento
+5
+>>> nodo.siguiente == None
+True
+						</code></pre>
+					</section>
+					<section>
+						<h2>clase ListaEnlazada</h2>
+						<pre><code data-trim contenteditable style="max-height: 100%;">
+class ListaEnlazada:
+    cabeza = None
+
+    def agregar(self, elemento):
+        nuevo_nodo = Nodo(elemento)
+
+        if self.cabeza == None:
+            self.cabeza = nuevo_nodo
+        else:
+            actual = self.cabeza
+            while actual.siguiente != None:
+                actual = actual.siguiente
+
+            actual.siguiente = nuevo_nodo
+
+    def imprimir(self):
+        actual = self.cabeza
+        print '[',
+        while actual != None:
+            print str(actual) + ',',
+            actual = actual.siguiente
+        print ']'
+						</code></pre>
+					</section>
+					<section>
+						<pre><code data-trim contenteditable>
+>>> l = ListaEnlazada()
+>>> l.imprimir()
+[ ]
+>>> l.agregar(1)
+>>> l.agregar(3)
+>>> l.agregar(5)
+>>> l.agregar(9)
+>>> l.agregar(0)
+>>> l.imprimir()
+[ 1, 3, 5, 9, 0, ]
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section data-state="intro">
+						<h2>conceptos teóricos</h2>					
+					</section>
+					<section data-state="intro">
+						<h2>herencia</h2>
+						<pre><code data-trim contenteditable style="max-height: 100%;">
+class Rectangulo:
+    largo = None
+    ancho = None
+
+    def __init__(self, largo, ancho):
+        self.largo = largo
+        self.ancho = ancho
+
+    def perimetro(self):
+        return self.largo * 2 + self.ancho * 2
+
+    def area(self):
+        return self.largo * self.ancho
+
+class Cuadrado(Rectangulo):
+    def __init__(self, lado):
+        self.largo = lado
+        self.ancho = lado
+						</code></pre>
+					</section>
+					<section data-state="intro">
+						<pre><code data-trim contenteditable>
+>>> r = Rectangulo(3, 2)
+>>> r.perimetro()
+10
+>>> r.area()
+6
+>>> c = Cuadrado(5)
+>>> c.ancho
+5
+>>> c.largo
+5
+>>> c.area()
+25
+>>> c.perimetro()
+20
+						</code></pre>
+					</section>
+					<section data-state="intro">
+						<h2>polimorfismo</h2>
+						<pre><code data-trim contenteditable style="max-height: 100%;">
+class Figura:
+    def perimetro(self):
+        raise NotImplementedError
+
+class TrianguloEquilatero(Figura):
+    lado = None
+
+    def __init__(self, lado):
+        self.lado = lado
+
+    def perimetro(self):
+        return self.lado * 3
+
+class Circulo(Figura):
+    radio = None
+
+    def __init__(self, radio):
+        self.radio = radio
+
+    def perimetro(self):
+        return 2 * math.pi * self.radio
+						</code></pre>
+					</section>
+					<section data-state="intro">
+						<pre><code data-trim contenteditable>
+>>> f = Figura()
+>>> f.perimetro()
+
+Traceback (most recent call last):
+  File "pyshell#124", line 1, in module
+    f.perimetro()
+  File "15-oop.py", line 80, in perimetro
+    raise NotImplementedError
+NotImplementedError
+>>> c = Circulo(3)
+>>> c.perimetro()
+18.84955592153876
+>>> t = TrianguloEquilatero(3)
+>>> t.perimetro()
+9						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section data-state="intro">
+						<h2>ejercicios</h2>
+					</section>
+					<section data-state="intro">
+						<p>implemente los métodos <code>es_vacia()</code>, <code>largo()</code> e <code>indice(i)</code> para la lista enlazada</p>
+						<pre><code data-trim contenteditable>
+>>> l = ListaEnlazada()
+>>> l.agregar(1)
+>>> l.agregar(3)
+>>> l.indice(0)
+1
+>>> l.indice(1)
+3
+>>> l.indice(2)
+IndexError
+						</code></pre>
+					</section>
+					<section data-state="intro">
+						<p>implemente la clase <code>Matriz</code></p>
+						<ul>
+							<li>debe tener un constructor que reciba el número de filas y el número de columnas y que crea la estructura de la matriz (lista de listas) inicializando todas las casillas en <code>None</code></li>
+							<li>provea un método <code>asignar(i, j, elemento)</code> que asigne el <code>elemento</code> dado a la casilla en la fila <code>i</code> y la columna <code>j</code></li>
+							<li>provea un método <code>indice(i, j)</code> que retorna el valor de la casilla en la fila <code>i</code> y la columna <code>j</code></li>
+							<li>implemente métodos para calcular las operaciones matemáticas: suma de matrices, multiplicación de matrices y transpuesta</li>
+						</ul>
+						<pre><code data-trim contenteditable>
+>>> m = Matriz(3, 2)
+>>> m.indice(1, 0) == None
+True		
+>>> m.asignar(1, 0, 'hola')
+>>> m.indice(1, 0)
+'hola'					
+						</code></pre>
+					</section>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="/reveal.js/lib/js/head.min.js"></script>
+		<script src="/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

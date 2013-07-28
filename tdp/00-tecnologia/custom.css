@@ -1,0 +1,84 @@
+
+html.default body {
+    background:url("Toy_robot.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.world_map body {
+    background:url("A_large_blank_world_map_with_oceans_marked_in_blue.PNG");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.world_map_gdp body {
+    background:url("sachs.png");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.world_map_night body {
+    background:url("earth_at_night.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.jared_diamond body {
+    background:url("jared-diamond-1.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.martillo body {
+    background:url("Chopping_tool.gif");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.hacha body {
+    background:url("hand_axe.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.agricultura body {
+    background:url("egypt_plow.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.industrial body {
+    background:url("sweeper-and-doffer.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.ww2 body {
+    background:url("ww2.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.turing body {
+    background:url("Alan_turing.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.bombe body {
+    background:url("1280px-Bombe-rebuild.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.informacion body {
+    background:url("Internet_map_1024.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+html.open_source body {
+    background:url("GVCS.jpg");
+    background-position: center;
+    background-size: 80%;
+}
