@@ -14,16 +14,16 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="/reveal.js/css/reveal.min.css">
-		<link rel="stylesheet" href="/reveal.js/css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.min.css">
+		<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/default.css" id="theme">
 		<link rel="stylesheet" href="01-ingenieria_software/custom.css">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="/reveal.js/lib/css/zenburn.css">
+		<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/lib/css/zenburn.css">
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
-			document.write( '<link rel="stylesheet" href="/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+			document.write( '<link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
 
 		<!--[if lt IE 9]>
@@ -186,6 +186,14 @@
 						</ul>
 					</section>
 					<section>
+						<p>deseable: alta cohesión, bajo acoplamiento</p>
+						<img src="01-ingenieria_software/alta_coh_bajo_acopl.png"/>
+					</section>
+					<section>
+						<p>no deseable: baja cohesión, alto acoplamiento</p>
+						<img src="01-ingenieria_software/baja_coh_alto_acopl.png"/>
+					</section>
+					<section>
 						<h3>ejemplo de modularidad en el proceso</h3>
 						<ul>
 							<li>separación de roles en el equipo de desarrollo, ej: desarrolladores, ingenieros de calidad, líder técnico, administrador de proyecto</li>
@@ -263,21 +271,80 @@
 							<li>Spring Framework</li>
 						</ul>
 					</section>
+				</section>
+				<section>
 					<section>
-						<h2>caso de estudio: plataforma para publicación editorial</h2>
+						<h1>roles</h1>
+					</section>
+					<section>
+						<ul>
+							<li>cliente (<em>stakeholder</em>)</li>
+							<li>administrador del proyecto</li>
+							<li>líder técnico</li>
+							<li>arquitecto de software</li>
+							<li>diseñador de experiencia de usuario / arquitecto de información</li>
+							<li>desarrollador / ingeniero de software</li>
+							<li>ingeniero de calidad / <em>tester</em></li>
+							<li>administrador de sistemas</li>
+						</ul>
 					</section>
 				</section>
 				<section>
-					<h1>roles</h1>
+					<section>
+						<h1>procesos de desarrollo</h1>
+					</section>
+					<section>
+						<h1>cascada</h1>
+						<img src="01-ingenieria_software/cascada.png">
+					</section>
+					<section>
+						<h1>iterativo</h1>
+						<p><img src="01-ingenieria_software/iterativo.png"/></p>
+						<ul>
+							<li>Agile</li>
+							<li>Scrum</li>
+							<li>RUP</li>
+						</ul>
+					</section>
 				</section>
 				<section>
-					<h1></h1>
+					<section>
+						<h1>modelamiento</h1>
+					</section>
+					<section>
+						<h3>modelo</h3>
+						<ul>
+							<li>representación</li>
+							<li>reducción</li>
+							<li>isomorfismo</li>
+						</ul>
+					</section>
+					<section>
+						<p>diferentes modelos guían el proceso de desarrollo de un proyecto de software</p>
+						<ul>
+							<li>arquitectura</li>
+							<li>modelo de datos</li>
+							<li>modelo de objetos</li>
+						</ul>
+					</section>
+					<section>
+						<p>el paradigma de orientación a objetos provee un marco de trabajo ideal para la ingeniería de software pues provee un mecanismo formal de construcción de modelos computacionales basados en jerarquías de objetos</p>
+					</section>
+				</section>
+				<section>
+					<h3>Referencias</h3>
+					<ul>
+						<li>Ghezzi C., Jazayeri M., Mandrioli D. (2003) "Fundamentals of Software Engineering", 2nd Ed, Prentice-Hall.</li>
+					</ul>
+				</section>
+				<section>
+					<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es"><img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Ingeniería de software</span> por <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/dmunguia/tec" property="cc:attributionName" rel="cc:attributionURL">Diego Munguía</a> se encuentra bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es">Licencia Creative Commons Atribución-NoComercial-CompartirIgual 3.0 Unported</a></p>
 				</section>
 			</div>
 		</div>
 
-		<script src="/reveal.js/lib/js/head.min.js"></script>
-		<script src="/reveal.js/js/reveal.min.js"></script>
+		<script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+		<script src="http://lab.hakim.se/reveal-js/js/reveal.min.js"></script>
 
 		<script>
 
@@ -294,12 +361,12 @@
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
-					{ src: '/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: '/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]

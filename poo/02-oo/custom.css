@@ -1,0 +1,13 @@
+
+html body {
+    background:url("cubes2.jpg");
+    background-position: center;
+    background-size: 100%;
+}
+
+.caption { 
+	font-size: 50%;
+    font-family: Verdana, Arial, sans-serif;
+	text-align: center; 
+}
+

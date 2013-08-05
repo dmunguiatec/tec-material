@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Java</title>
+
+		<meta name="description" content="Programación Orientada a Objetos - Java">
+		<meta name="author" content="Diego Munguía">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="/reveal.js/css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="02-oo/custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="/reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="/reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Orientación a Objetos</h1>
+					<h3>Programación Orientada a Objetos</h3>
+				</section>
+
+				<section>
+					<h3>Objetos</h3>
+					<p>desde el paradigma de OO se considera que los objetos se componen de:</p>
+					<ul>
+						<li>propiedades y/o estado</li>
+						<li>comportamiento (métodos)</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h3>Ejemplo</h3>
+						<p>modelar el concepto de automóvil como un objeto</p>
+					</section>
+
+					<section>
+						<p>dependiendo del contexto del problema computacional que se quiera modelar, las propiedades del objeto modelado pueden variar categóricamente</p>
+						<img src="02-oo/auto_clases_perspectivas.png" />
+						<p class="caption">perspectivas: técnica y comercial</p>
+					</section>
+
+					<section>
+						<img src="02-oo/auto_props_estado.png"/>
+					</section>
+
+					<section>
+						<img src="02-oo/auto_ops.png"/>
+					</section>
+
+					<section>
+						<img src="02-oo/auto_clase.png"/>
+					</section>
+				</section>
+
+ 				<section>
+					<section>
+						<h3>ejemplo</h3>
+						<p>modelar figuras geométricas como clases</p>
+					</section>
+
+					<section>
+						<img src="02-oo/figuras_clases.png">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>principios teóricos</h2>
+						<ul>
+							<li>abstracción</li>
+							<li>encapsulamiento</li>
+							<li>modularidad</li>
+							<li>jerarquía</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>abstracción</h3>
+						<ul>
+							<li>al describir o modelar un fenómeno particular se incluyen o especifican aspectos considerados relevantes dentro del contexto que se realiza la abstracción, a la misma vez, se descartan otros detalles considerados no esenciales</li>
+							<li>desde una perspectiva funcional permite la re-utilización de código: los desarrolladores pueden implementar/probar/depurar objetos que realizan tareas específicas, que posteriormente pueden ser utilizados en el código propio con toda confianza (bibliotecas de objetos)</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="02-oo/abstraccion.png">
+					</section>
+
+					<section>
+						<h3>encapsulamiento</h3>
+						<ul>
+							<li>ocultamiento de información: al interactuar únicamente con los métodos de un objeto, lo detalles de la implementación del objeto permanecen ocultos del mundo exterior</li>
+							<li>garantiza la integridad de los datos del objeto, pues la única manera de modificarlos es a través de las reglas definidas en sus métodos</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="02-oo/encapsulamiento.png"/>
+					</section>
+
+					<section>
+						<h3>modularidad</h3>
+						<ul>
+							<li>el código de un objeto puede ser escrito y mantenido independientemente del código de otros objetos, una vez creado el objeto puede ser fácilmente utilizado por diferentes aspectos de la aplicación</li>
+							<li>concepto de caja de herramientas</li>
+						</ul>
+					</section>
+
+					<section>
+						<pre><code data-trim contenteditable>
+import math
+
+CIRCULO = 0
+TRIANGULO = 1
+CUADRADO = 2
+RECTANGULO = 3
+def calcular_area(tipo_figura, lado, radio, largo, ancho):
+	if (tipo_figura == CIRCULO):
+		area = math.pi * radio ** 2
+	elif (tipo_figura == TRIANGULO):
+		area = lado ** 2 * (math.sqrt(3) / 4)
+	elif (tipo_figura == CUADRADO):
+		area = lado ** 2
+	elif (tipo_figura == RECTANGULO):
+		area = largo * ancho / 2
+
+	return area
+						</code></pre>
+						<p>código <em>no</em> modular</p>
+						<p>considere la opción de agregar área de triángulo no equilatero</p>
+					</section>
+
+					<section>
+						<pre><code data-trim contenteditable>
+import math
+
+def calcular_area_circulo(radio):
+	return math.pi * radio ** 2
+
+def calcular_area_triangulo(base, altura):
+	return base * altura / 2
+
+def calcular_area_triangulo_equilatero(lado):
+	return lado ** 2 * (math.sqrt(3) / 4)
+
+def calcular_area_cuadrado(lado):	
+	return lado ** 2
+
+def calcular_area_rectangulo(largo, ancho)
+	return largo * ancho
+						</code></pre>
+						<p>aunque sólo me interese calcular el área de un círculo debo importar todo el módulo</p>
+					</section>
+
+					<section>
+						<h3>jerarquía</h3>
+						<ul>
+							<li>los objetos podrían tener cierta cantidad de características (estado, propiedades y comportamiento) en común</li>
+							<li>a la vez, los mismos objetos podrían definir, cada uno, características particulares que los diferencien de los otros objetos</li>
+							<li>la programación orientada a objetos permite a los objetos heredar propiedades y métodos de otras clases de objetos, formando así una jerarquía</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="02-oo/figuras_clases.png">
+					</section>
+
+					<section>
+						<img src="02-oo/interface.png">
+					</section>
+
+					<section>
+						<img src="02-oo/herencia.png">
+					</section>
+
+					<section>
+						<img src="02-oo/java.io.package.gif"/>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>mensajes dinámicos (dynamic dispatch)</h3>
+						<ul>
+							<li>las llamadas a métodos se conocen también como intercambio de mensajes entre objetos</li>
+							<li>mensajes dinámicos: se refiere a la capacidad de la plataforma para determinar en tiempo de corrida cuál es el método exacto que debe ser invocado según la jerarquía</li>
+							<li>permite a una nueva versión de una abstracción (clase) desplegar nuevo comportamiento refinado, incluso cuando es utilizada en un contexto que espera una versión anterior</li>
+						</ul>
+					</section>
+					<section>
+						<img src="02-oo/mensajes_dinamicos.png"/>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>tipos de lenguajes OO</h3>
+						<ul>
+							<li>basados en clases (Java, Smalltalk, Python)</li>
+							<li>basados en prototipos (Javascript, ActionScript, Lua)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>OO basada en clases</h3>
+						<ul>
+							<li>clases: definen el comportamiento y la estructura del objeto</li>
+							<li>instancias: objetos utilizables, se crean a partir de las clases y contienen los datos a utilizar</li>
+						</ul>
+					</section>
+					<section>
+						<h3>OO basada en prototipos</h3>
+						<ul>
+							<li>no hay clases, sólo objetos</li>
+							<li>se pueden crear objetos vacíos (ex-nihilo) que luego son refinados con datos y comportamiento, o se pueden clonar objetos pre-existentes (el objeto original se convierte en prototipo del nuevo objeto)</li>
+							<li>la creación de un nuevo objeto a partir la clonación de otro ya existente es una forma de herencia</li>
+						</ul>
+					</section>
+					<section>
+						<pre><code data-trim contenteditable style="max-height: 600px; max-width: 600px;">
+> yaris = {placa: 463076, marca: "toyota", modelo: "yaris", toString: function() { return this.marca + ' ' + this.modelo; } }
+  Object {placa: 463076, marca: "toyota", modelo: "yaris", toString: function}
+> yaris.toString()
+  "toyota yaris"
+> yaris_del_año = {año: 2013, toString: function() { return this.marca + ' ' + this.modelo + ' ' + this.año; } }
+  Object {año: 2013, toString: function}
+> yaris_del_año.__proto__ = yaris
+  Object {placa: 463076, marca: "toyota", modelo: "yaris", toString: function}
+> yaris.isPrototypeOf(yaris_del_año);
+  true
+> yaris_del_año.toString()
+  "toyota yaris 2013"
+> yaris.marca
+  "toyota"
+> yaris_del_año.marca
+  "toyota"
+> yaris.año
+  undefined
+> yaris_del_año.año
+  2013
+						</code></pre>
+					</section>
+
+				</section>
+
+				<section>
+					<h3>Referencias</h3>
+					<ul>
+						<li>The Java Tutorials, "Lesson: Object Oriented Programming Concepts", disponible en: <a href="http://docs.oracle.com/javase/tutorial/java/concepts/index.html">http://docs.oracle.com/javase/tutorial/java/concepts/index.html</a> </li>
+						<li>Scott M.L., Programming Language Pragmatics, 2nd Ed, Morgan Kaufmann, 2006</li>
+					</ul>
+				</section>
+				<section>
+					<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es"><img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Orientación a Objetos</span> por <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/dmunguia/tec" property="cc:attributionName" rel="cc:attributionURL">Diego Munguía</a> se encuentra bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.es">Licencia Creative Commons Atribución-NoComercial-CompartirIgual 3.0 Unported</a></p>
+				</section>
+			</div>
+		</div>
+
+		<script src="/reveal.js/lib/js/head.min.js"></script>
+		<script src="/reveal.js/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
