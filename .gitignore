@@ -1,0 +1,13 @@
+**/.Rproj.user
+**/.Rhistory
+**/.RData
+**/packrat/lib*/
+.DS_Store
+**/.~lock*
+data/.DS_Store
+**/node_modules
+**/.idea
+**/.envrc
+*_files/
+*_co.csv
+

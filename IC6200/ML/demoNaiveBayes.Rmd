@@ -1,0 +1,77 @@
+---
+title: "Demostración Clasificador Naive Bayes"
+author: "Diego Munguía"
+date: "May 15, 2016"
+output: html_document
+---
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(e1071)
+library(ggplot2)
+
+# LOAD
+df <- read.csv('data/agaricus_lepiota.csv')
+
+# CLEAN
+## split sample
+set.seed(834593)
+sampleSize <- nrow(df)
+df$rgroup <- floor(sampleSize * runif(sampleSize))
+cut <- round(sampleSize * 0.1)
+
+## target var
+df$outcome <- df$class == 'e'
+
+testing <- df[df$rgroup %in% sort(df$rgroup)[1:cut],]
+training <- df[df$rgroup %in% sort(df$rgroup)[(cut + 1):sampleSize],]
+```
+
+## datos
+
+* tamaño de la muestra: `r nrow(df)`
+* tamaño conjunto de entrenamiento: `r nrow(training)`
+* tamaño conjunto de pruebas: `r nrow(testing)`
+* distribución de clases:
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+print(table(df$class))
+```
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+print(head(df))
+```
+
+## modelo
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+predictors <- names(df)
+predictors <- predictors[predictors != 'outcome' & predictors != 'class' & predictors != 'rgroup']
+formula <- sprintf('outcome ~ %s', paste(predictors, collapse = ' + '))
+print(formula)
+
+nb <- naiveBayes(as.formula(formula), data = training)
+```
+
+## predicciones
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+# predictions
+testing$p <- predict(nb, newdata = testing, type = 'raw')[, 'TRUE']
+ggplot(testing, aes(p)) + geom_density(alpha = 0.5)
+```
+
+## evaluación
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+cM <- table(real = testing$outcome, pred = testing$p > 0.5)
+print(cM)
+
+TP <- cM[2,2]
+FP <- cM[1,2]
+TN <- cM[1,1]
+FN <- cM[2,1]
+```
+
+* Exactitud: `r (TP + TN) / (TP + TN + FP + FN)`
+* Precisión: `r TP / (TP + FP)`
+* Reclamo: `r TP / (TP + FN)`

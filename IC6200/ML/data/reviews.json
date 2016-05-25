@@ -1,0 +1,430 @@
+[
+  {
+    "review": "Excelente comida, la atención, el chef es super tuanis, precios excelentes... Mas que recomendado!!",
+    "class": "good"
+  },
+  {
+    "review": "Excelente ubicación para evitar la fila para el tren. El choripán es mortal.",
+    "class": "good"
+  },
+  {
+    "review": "Un concepto diferente que le hacia falta a San José. Los precios son buenos y la comida es deliciosa. Tienen opciones veganas y vegetarianas, como los prote-gallos. ¡Ah! Y venden cocos.",
+    "class": "good"
+  },
+  {
+    "review": "Definitivamente un lugar que hay que visitar!! Se ve la pasión en cada plato",
+    "class": "good"
+  },
+  {
+    "review": "Las hamburguesas legend y capresse ...como para volver 1000 veces",
+    "class": "good"
+  },
+  {
+    "review": "#StreetFood urbana y sensual experiencia en la Cali",
+    "class": "good"
+  },
+  {
+    "review": "Delicioso y original!!!",
+    "class": "good"
+  },
+  {
+    "review": "No les caería mal mejorar el servicio al cliente",
+    "class": "bad"
+  },
+  {
+    "review": "Hamburguesas deliciosas por mucha , leyenda del gran Bill",
+    "class": "good"
+  },
+  {
+    "review": "Se sacaron un 100. Delicioso y buena musiquita mientras se espera.",
+    "class": "good"
+  },
+  {
+    "review": "Recomiendo las papas y las salsas buenísimas, las hamburguesas cero recomendadas, las sodas artesanales no se pidan de fresas y flores sabe rarísimo, el precio es un poco elevado para lo que es",
+    "class": "good"
+  },
+  {
+    "review": "Se puede pedir un hongo portobello en lugar de torta de carne la mayolla es la mejor salsa",
+    "class": "good"
+  },
+  {
+    "review": "Todo es demasiado rico! Las papas y las salsas",
+    "class": "good"
+  },
+  {
+    "review": "Un menú que antoja probar todo",
+    "class": "good"
+  },
+  {
+    "review": "Aquí se come rico y sin gastar demasiado. Lo cual es raro en San José. Las hamburguesas son unos monstruos deliciosos. Recomiendo la vegetariana y la Donamburguesa",
+    "class": "good"
+  },
+  {
+    "review": "La comida muy buena la hamburguesa gran Bill muy rica los caribean ignacios regulares si hay q esperar tanto para ordenar como para que le den la orden pero tampoco es mucho",
+    "class": "bad"
+  },
+  {
+    "review": "Una muy buena opción todo es grandes y delicioso",
+    "class": "good"
+  },
+  {
+    "review": "La comida deliciosa, pero la atención de la cajera PÉSIMA. Lástima por que creo que no volveré al lugar.",
+    "class": "bad"
+  },
+  {
+    "review": "La leyenda del gran bill es un 10.. Buenísimas las salsas y sodas artesanales",
+    "class": "good"
+  },
+  {
+    "review": "Excelente lugar para comer diferente y delicioso! Las papas y las salsas son las mejores!",
+    "class": "good"
+  },
+  {
+    "review": "Muy bueno para comer a las deshoras",
+    "class": "good"
+  },
+  {
+    "review": "Era la primera vez que lo iba y pedimos para llevar, en los nachos salió un insecto (parecía una cucaracha pequeña) nunca más comería ahí... Lástima porque tienen muy buen sabor pero NO",
+    "class": "bad"
+  },
+  {
+    "review": "La leyenda es simplemente de las mejores hamburguesas que he probado!",
+    "class": "good"
+  },
+  {
+    "review": "La comida simplemente genial un ambiente agradable",
+    "class": "good"
+  },
+  {
+    "review": "Estaba delicioso el choripán! Las gaseosas artesanales son demasiado ricas",
+    "class": "good"
+  },
+  {
+    "review": "La mejor Hamburguesa que me he comido en mis 35 aňos, los amo! La salsa Mayajo en las papas, es ajo asado con mayonesa artesanal.",
+    "class": "good"
+  },
+  {
+    "review": "Esa gente muestra pasión en lo que hace. Exquisita comida y a un precio genial. Además lo motiva a uno a comer en el parque.",
+    "class": "good"
+  },
+  {
+    "review": "Comida deliciosa pasada las 11.",
+    "class": "good"
+  },
+  {
+    "review": "Todo es perfecto. Pida lo que sea dependiendo de su gusto, no le van a quedar mal.",
+    "class": "good"
+  },
+  {
+    "review": "todo !!! El pulled pork la capresse la Bill el pan d ayote uffff dem rico!!",
+    "class": "good"
+  },
+  {
+    "review": "El pulled pork es una experiencia religiosa. Los precios son súper buenos, particularmente para la zona. Prueben todo en el menú",
+    "class": "good"
+  },
+  {
+    "review": "Cualquier palabra que utilice es poca para calificar éste lugar, realmente bueno. La calidad de la carne, los ingredientes, aderezos es muy buena. Las porciones son muy generosas, a los 50 m parqueo.",
+    "class": "good"
+  },
+  {
+    "review": "Amor en forma de hamburguesas, papas y salsas.",
+    "class": "good"
+  },
+  {
+    "review": "Por Dios delicioso todo!!",
+    "class": "good"
+  },
+  {
+    "review": "Probé las sodas artesanales y los gajos de papa y son super ricos.",
+    "class": "good"
+  },
+  {
+    "review": "Comida muy original y sabrosa! Recomendado!",
+    "class": "good"
+  },
+  {
+    "review": "Las bebidas artesanales son muy buenas!",
+    "class": "good"
+  },
+  {
+    "review": "Hay torta vegetariana de frijoles para las hamburguesas!",
+    "class": "good"
+  },
+  {
+    "review": "La leyenda del gran Bill es exquisita. Súper recomendada.",
+    "class": "good"
+  },
+  {
+    "review": "La leyenda del gran Bill simplemente espectacular !!!",
+    "class": "good"
+  },
+  {
+    "review": "El aderezo de culantro, increíble!!!",
+    "class": "good"
+  },
+  {
+    "review": "De verdad de lo mejor que se puede encontrar para comer en la zona de la California",
+    "class": "good"
+  },
+  {
+    "review": "Precios muy cómodos, comida aceptable! Para comer de a'parao, no venden licor!",
+    "class": "good"
+  },
+  {
+    "review": "Las hamburguesas y las salsas de las papas",
+    "class": "good"
+  },
+  {
+    "review": "La Punta de Lanza",
+    "class": "good"
+  },
+  {
+    "review": "Hamburguesas riquísimas",
+    "class": "good"
+  },
+  {
+    "review": "Excelentes hamburguesas!",
+    "class": "good"
+  },
+  {
+    "review": "Menú variado y sabroso, cocina gourmet callejera, practico y delicioso.",
+    "class": "good"
+  },
+  {
+    "review": "Hoy fui por primera vez y lo amé. Quiero probar todo el menú.",
+    "class": "good"
+  },
+  {
+    "review": "Hamburguesas!!",
+    "class": "good"
+  },
+  {
+    "review": "Bueeeno el mejor lugar para comer en la cali! No regrets",
+    "class": "good"
+  },
+  {
+    "review": "El choripan en insípido. Las bebidas artesanales SODA son horribles.",
+    "class": "bad"
+  },
+  {
+    "review": "Primera y última vez. Precio elevado para lo que sirven (tanto en cantidad como en calidad). Nada bueno que decir. Parece que las salsas las sirven con gotero, ni se ven.",
+    "class": "bad"
+  },
+  {
+    "review": "¡Las hamburguesas son geniales!",
+    "class": "good"
+  },
+  {
+    "review": "Estuve el día de ayer a eso de las 7 pm en La Cali, me gusto mucho, la imagen no le hace merito, probé un pulled pork ( pan bonette, cerdo mechado ahumado con salsa barbacoa de la casa y aguacate, unas papitas a la francesa con mayolla ( mayonesa especial). Todo estaba delicioso. LA proxima los visito con la familia.",
+    "class": "good"
+  },
+  {
+    "review": "Ayer recibí una pésima atención, espera en la entrega, mal trato del cajero cuando le Pregunté sobre mi comida dijo que estaban sacando lo más sencillo de primero... WTF??? Más de 40 minutos esperando unas papas fritas !!! A las papas le faltaban ingredientes (venían casi sin nada , a diferencia de lo que he consumido anteriormente) Este lugar se había convertido en uno de mis favoritos, y lastimosamente si no le ponen huevos a la vara pasarán a ser eso, una ventanita más",
+    "class": "bad"
+  },
+  {
+    "review": "Hoy recibimos una pésima atención en la ventana en la Cali. Muy mala actitud al atender, eran al rededor de las 7 pm y expresaban sus ganas de largarse (por supuesto podemos entender el cansancio , como todos en algún momento en nuestro trabajo, pero la atención no puede cambiar hasta la hora que ustedes indican que cierran) . Las órdenes no salían por orden de llegada sino preparaban lo más sencillo primero, por lo que personas que estuvieron ahí antes de nosotros recibieron su orden muchísimo antes! Se quedan sin ingredientes para las hamburguesas y no avisan para no pedirlas, la hamburguesa venía sin algunos ingredientes. En general les falta organización cuando reciben mayor cantidad de gente.",
+    "class": "bad"
+  },
+  {
+    "review": "hey acabo de bajar desde cartago para ir a la de la cali y esta cerrado!!! deberian publicarlo lo peor — me siento molesta.",
+    "class": "bad"
+  },
+  {
+    "review": "Muy rica comida, me encantó!",
+    "class": "good"
+  },
+  {
+    "review": "La torta bien bien cocida por favor. Nadie me puso atención",
+    "class": "bad"
+  },
+  {
+    "review": "Los productos son muy buenos, más que eso, son deliciosos. Lamentablemente hace un momento llame para hacer un pedido (7:32pm) y pasar a retirarlo minutos despues ya que me queda muy cerca. Pase por la ventanita minutos despues (7:45pm).. Cual fue mi sorpresa?? Cuando llegue y pague la orden le estaban dando a otra persona que estaba en la cola MI pedido. Los cocineros pretendieron que me quedara esperando a que prepararan el mio nuevamente, bastante desagradable la experiencia, muy mal el servicio, me parece falta de atención al cliente y falta de concentración en su trabajo y poco profecionalismo, si tienen un número telefónico al cual se pueden hacer pedidos para solo ir a retirar, es de muy mal gusto llegar y que le esten dando el pedido a otra persona.. Ni una disculpa de los que trabajan ahí. Poco serios, lastima, regrese a mi oficina cn las manos vacías. Asi como recomende lo rico que es comer ahí rambien es bueno q estas deficiencias se sepan. Un buen servicio al cliente es indispensable, ojala lo mejoren uds.",
+    "class": "bad"
+  },
+  {
+    "review": "Excelente Servicio!!! Buen trato al cliente y demás ..!!!! La comida buenísima , Excelente lugar sin duda",
+    "class": "good"
+  },
+  {
+    "review": "Hola!! Ayer fuí por un sandwich de pollo caprese y ya cuando iba de camino a mi casa me di cuenta de que el pollo estaba CRUDO!!! No me devolví por las presas y demás...pero sí quería hacerles saber... bastante decepcionada quedé...obvio tuve que botarlo...",
+    "class": "bad"
+  },
+  {
+    "review": "Ayer en la noche me compré una birra en el AMPM de la California y me fui a comer un sándwich de lomo de cerdo en BBQ con aguacate en La Ventanita Meraki. La más divertida comida al estilo callejero en la Estación del Ferrocarril al Atlántico. En otro país de Latinoamérica es impensable hacer eso a altas horas de la noche sin que nada suceda",
+    "class": "good"
+  },
+  {
+    "review": "Qué mal con la experiencia de hoy! 50 minutos esperando orden que al final tuve que cancelar porque ni siquiera estaba en proceso de preparación, ERA cliente de ustedes sin embargo creo que hoy, no sólo yo lo dejaré de ser. Como recomendaciones: deberían estar atentos con las actividades que circundan el chante para ver o medir la capacidad de respuesta. Creo que la muchacha que cobra debería tener el más aseo al dejar de cobrar y meterse a armar órdenes. Una lastima, porque la comida es deliciosa!",
+    "class": "bad"
+  },
+  {
+    "review": "Hoy cerraron antes de las 8 pm. No comí nada en la Luz para comerme una leyenda y estaba cerrado... ‪#‎todomal‬",
+    "class": "bad"
+  },
+  {
+    "review": "Ok no ya, ya ahora sí definitivamente proclamo la Mayoajo de La Ventanita Meraki como la cosa más deliciosa que he probado en mi vida. EN MI VIDA, LO JURO! Estoy enamorado a un nivel estúpido y ridículo dios míooo AAAAAHHHHH ESTO ES DEMASIADO DELICIOSO!!",
+    "class": "good"
+  },
+  {
+    "review": "Como dicen que no hay mejor publicidad que un cliente satisfecho, paso por aquí a decir que ayer por primera vez probé La Ventanita Meraki , y así fácil fácil puedo decir que la salsa de ajo ahumado que le echaron a las (deliciosas) papas, fue una de las cosas más exquisitas que he tenido el gusto de probar EN MI VIDA! Y las hamburguesas ni para qué... Pero esa salsa, fue algo mágico! Vayan, está delicioso, no está caro y en ese sabor se nota que está hecho con amor",
+    "class": "good"
+  },
+  {
+    "review": "De un tiempo para acá, me dicen mis amigos, no se trasnocha en la capital sin terminar aquí en este delicioso y curioso lugar. Delicioso porque así simplemente es y curioso porque al ser street food hay que comer de a parado o en el Atlantic Train Food Court. Obligatorio es el chiste: ¿Esa mesa está ocupada? dirigida a una de las muchas parejas comensales sentadas a lo largo de las gradas. No es barato pero tampoco caro: vale lo que se paga y se paga lo que vale. Rico y suculento, pierdes el glamour en momentos. Hay que repetirlo.",
+    "class": "good"
+  },
+  {
+    "review": "Maes sorry por la baja calificación. Me cuadra un montón la comida aca y he ido varias veces, pero la última vez me quedaron pésimo con la orden. Pedí una Valhala y la torta y el pan venían super quemados. Osea el mae que estaba cocinando la vara no tuvo cuidado con eso y así la empacó, y la verdad eso le cagó bastante el sabor a la hamburguesa. La torta tambien la sentí super seca! Y yo sé que ustedes saben que una buena burger deberia estar jugosa, entonces porfa entrenese bien a los chefs que deja en la cocina porq para mi la cagaron feo en esta última vez que fui. Otra cosa ademas. La muchacha que atiende parece como q no le cuadra trabajar y tiene un trato mal ride. Estaría tuanis que lo traten bien a uno cuando va a pedir comida, servicio al cliente basico. Yo tampoco exijo una vara super fina de atención. Son detalles MUUUY simples que si se mejoran ayudan un pichazo al negocio",
+    "class": "bad"
+  },
+  {
+    "review": "Hoy fui a la ventanita por segunda vez, la primera no me pareció mal pero nada del otro mundo,pero hoy fue terrible! Pedí una orden de papas y un prote gallo para llevar, vivo a menos de un kilómetro de ahí y cuando llegue a mi casa me llevo la sorpresa que las papas estaban frías y duras! como si las hubieran sacado de la refri con un poco de salsa encima, y las verduras del prote Gallo era un montón de cebolla y Chile con 2 pedazos de zucchini y uno de zanahoria con un montón de salsa lizano que la verdad ni siquiera me pude terminar de comer del sabor tan fuerte que tenía. Bote 5.500 colones q hubiera preferido usarlos en algo que yo misma podía preparar en mi casa y de mejor manera. Tienen mucho potencial pero deberían de hacer la comida con más calma ya que al menos hoy perdieron un cliente.",
+    "class": "bad"
+  },
+  {
+    "review": "Hoy recibimos una pésima atención en la ventana en la Cali. Muy mala actitud al atender, eran al rededor de las 7 pm y expresaban sus ganas de largarse (por supuesto podemos entender el cansancio , como todos en algún momento en nuestro trabajo, pero la atención no puede cambiar hasta la hora que ustedes indican que cierran) . Las órdenes no salían por orden de llegada sino preparaban lo más sencillo primero, por lo que personas que estuvieron ahí antes de nosotros recibieron su orden muchísimo antes! Se quedan sin ingredientes para las hamburguesas y no avisan para no pedirlas, la hamburguesa venía sin algunos ingredientes. En general les falta organización cuando reciben mayor cantidad de gente.",
+    "class": "bad"
+  },
+  {
+    "review": "Era clienta fija y no tenía ninguna queja de la comida, sin embargo hace quince días fui y tuve una experiencia terrible empezando por el trato y lo que estuvo aún peor fue la comida no tuve chance de quejarme porque ya estaba un poco lejos como para devolverme pero a resumidas cuentas parecía que a mi hamburguesa le habían puesto lo peor que tenían ese día, es una pena porque si uno paga es para recibir trato de calidad y por supuesto buena comida.",
+    "class": "bad"
+  },
+  {
+    "review": "Super mala atención me han atendido mejor en zapote, servicio al cliente cero prácticamente me atendieron como un culo y por Dios como es posible en 40 minutos no puedan con una orden o sea si ustedes no pueden con un día lleno brete mejor cierren el tiempo mínimo en servicios de alimentos es 15 minutos, comida Rica hay en todo lado un buen servicio en pocos lugares definitivamente lastima sinceramente",
+    "class": "bad"
+  },
+  {
+    "review": "Buena comida, pero mala atención, desorganizados, mal educados, llegan personas a cada rato a la ventana a repetir (o no sé si les quedan debiendo de la orden), con mucho potencial pero faltan ganas definitivamente, para mí deberían de poner los aparatos que suenan y vibran cuando la orden está lista, así la gente se va a sentar al frente y no se hace ese desorden y se desestresa un poco los que atienden",
+    "class": "bad"
+  },
+  {
+    "review": "Soy cliente frecuente del local, hoy fui y como siempre me pedí los Caribbean Ignacios, los tuve q botar, cambiaron la receta, le pusieron una salsa de tomate bastante asquerosa, sin dejar de mencionar q estaba todo servido sin la mínima delicadeza. No les pongo una calificación más baja xq no se puede.",
+    "class": "bad"
+  },
+  {
+    "review": "Fui el sábado pasado y esperé 45 minutos por un sandwich Ktos, entiendo que la parrilla estaba mala pero al parecer me tocó esperar de más porque no tomaron mi orden. Mal por la muchacha que estaba cobrando pero bueno... Aunque me tuvieron que dar el sandwich con platanitos tostados porque no tenían papas hechas rescato el hecho de que sabía delicioso. Me tocará ir cuando no haya tanta gente, el equipo esté funcionando y me atienda alguien que si me pregunte el nombre :s",
+    "class": "bad"
+  },
+  {
+    "review": "Hoy vine con las ganas y la ilusión de probar su comida y para mi sorpresa se encuentra cerrado, cuando el horario dice q debería estar abierto y no hay ninguna publicación que anuncie el cierre el día de hoy, me quede con las ganas...",
+    "class": "bad"
+  },
+  {
+    "review": "Maes mala nota, compré 2 Bill, una caprese y un pulled pork para llevar y al llegar a la casa en tres Ríos solo venía una Bill, una persona se quedó sin comer, una injusticia habiendo pagados por ambas",
+    "class": "bad"
+  },
+  {
+    "review": "Ya son 2 veces, en Heredia y en San José en que mi hamburguesa de 6mil colones viene cruda. Todo se ve muy bien pero de nada sirve si al parecer no saben cocinar la carne.",
+    "class": "bad"
+  },
+  {
+    "review": "La comida muy buena, las opciones diferentes a otros lugares que hemos visitado en Heredia, pero el muchachito que nos atendió, el cajero, un poco odiosito. Vi que a otros clientes les preguntaba a qué término la carne, pero a mi ni tan siquiera me preguntó. Deberían implementar el exprés y quizás poner un par de sillitas por ahí. Sigan adelante con el negocio, es algo rico y diferente, pero mejoren la atención al cliente Emoticón wink",
+    "class": "bad"
+  },
+  {
+    "review": "Muy mal que cuando uno hace la orden no digan qué tipo de pan es el disponible ya que yo pedí una hamburguesa LEYENDA y el pan era todo delgado,feo y suave... La pedí para llevar y cuando lleve a la casa ya el pan estaba horrible... Lástima que no avisen las cosas antes de cobrar !!",
+    "class": "bad"
+  },
+  {
+    "review": "Disculpen por la calificación!!! La comida si era más de lo que esperaba, deliciosa. La calificación tan baja es por el servicio al cliente.a mi parecer la joven no quiere trabajar o está en zona de confort. Parece más interesada en el celular que otra cosa. Ojalá tomen en cuenta estos comentarios ya que veo que en casi todos hay un denominador común",
+    "class": "bad"
+  },
+  {
+    "review": "La comida es buena, el concepto es bueno, pero la atención al cliente es pésima! Trato poco amable y poco serio. Y sería bueno que los precios sean visibles en el menú.",
+    "class": "bad"
+  },
+  {
+    "review": "Ayer fui a la de heredia, porque me había recomendado, la torta estaba cruda ni a término medio estaba, y ni siquiera me preguntaron cómo la quería. Tarjeta roja",
+    "class": "bad"
+  },
+  {
+    "review": "Lamentablemente la música que tienen no es nada agradable... Me ps aun para poder disfrutar la comida que dicho se dé paso, quedo corta por qué no contaban con los ingredientes para la orden.",
+    "class": "bad"
+  },
+  {
+    "review": "El queso negro quemado, incomible...me dicen que no todos les gusta el queso tostado...por favor, tostado crujiente es una cosa, negro quemado es otra",
+    "class": "bad"
+  },
+  {
+    "review": "Pésimo servicio al cliente. El tiempo de espera es casi de 40 minutos. La comida no esta mal pero la atención es terrible.",
+    "class": "bad"
+  },
+  {
+    "review": "Lo que me quejo rotundamente es que cuando se esta pidiendo la orden no tienen la decencia de avisar que faltan ingrediente porque cuando ya uno pago hasta ahi dicen que el producto final va ser diferente por falta de ingredientes !!",
+    "class": "bad"
+  },
+  {
+    "review": "La comida si me gustó e igual q muchos el sevicio al cliente no y cuando fui sólo habían 2 clientes más ahí sería q tomen nota los dueños y q hagan el cambio",
+    "class": "bad"
+  },
+  {
+    "review": "He ido 2 veces y las 2 veces me encuentro con que el lugar está cerrado. Muy malo.",
+    "class": "bad"
+  },
+  {
+    "review": "Tres cosas 11 rojos, se tardaron bastante, esperar en media calle y la comida bien fea.",
+    "class": "bad"
+  },
+  {
+    "review": "Hoy fui por segunda vez y la primera vez todo bien pero hoy horrible la salsa de los plátanos espantosa.",
+    "class": "bad"
+  },
+  {
+    "review": "Servicio al Cliente pésimo, no se puede esperar porque estar afuera es una experiencia desagradable música a todo el volumen malos olores......lo que lo salva es que la comida es muy buena, pero comida buena hay en otros lugares así que pongan atención.. ",
+    "class": "bad"
+  },
+  {
+    "review": "Los productos son muuy buenos, más que eso, son deliciosos. Lamentablemente hace un momento llame para hacer un pedido (7:32pm) y pasar a retirarlo minutos despues ya que me queda muy cerca. Pase por la ventanita minutos despues (7:45pm).. Cual fue mi sorpresa?? Cuando llegue y pague la orden le estaban dando a otra persona que estaba en la cola MI pedido. Los cocineros pretendieron que me quedara esperando a que prepararan el mio nuevamente, bastante desagradable la experiencia, muy mal el servicio, me parece falta de atención al cliente y falta de concentración en su trabajo y poco profecionalismo, si tienen un número telefónico al cual se pueden hacer pedidos para solo ir a retirar, es de muy mal gusto llegar y que le esten dando el pedido a otra persona.. Ni una disculpa de los que trabajan ahí. Poco serios, lastima, regrese a mi oficina cn las manos vacías. Asi como recomende lo rico que es comer ahí rambien es bueno q estas deficiencias se sepan. Un buen servicio al cliente es indispensable, ojala lo mejoren uds.",
+    "class": "bad"
+  },
+  {
+    "review": "Esperaba mucho más en todos los sentidos..",
+    "class": "bad"
+  },
+  {
+    "review": "La comida super rica. Lástima que la muchacha que cobra no de un buen trato.",
+    "class": "bad"
+  },
+  {
+    "review": "Hoy fui por primera vez. La comida me parece deliciosa, sin embargo me quedo un pequeño mal sabor de boca y esto fue por la mala cara de la muchacha que nos atendió!!",
+    "class": "bad"
+  },
+  {
+    "review": "Demasiado lento, 30 minutos para un choripán normal",
+    "class": "bad"
+  },
+  {
+    "review": "Hola ayer fui por primera vez y la verdad tenía muchas expectativas porque me lo habían recomendado muy bien. Sin embargo como primera experiencia fue muy decepcionante. La verdad comí muy mal. Pedí el Malanga coco. Para mi sorpresa eran solo unos chips chorreados con una salsa y nada mas y la mitad estaban quemados.  Le dije al cocinero que estaban quemadas a lo que el amablemente me respondió que me las iba a hacer de nuevo. Hasta ahí todo bien. El primer problema es que tuve que esperar como 15 min mas mientras le daban la comida a toda la otra gente. Cuando al fin me las entregaron me di cuenta que en la descripción del plato en la pared decía que traían cebolla morada, curry y rábano pero no traían nada de eso! le dije al cocinero y me dijo que nunca las habían hecho con esos ingredientes. Que ellos no sabían que eran así. Al final entre carreras le pusieron un par de tajadas de rábano y me las volvieron a entregar. Me quede pensando. ¿Y la cebolla morada y el curri? La verdad no entendí supongo que no pude probar el plato como era. Les comparto mi experiencia para que puedan seguir creciendo. Estoy segura que tuve mala suerte.",
+    "class": "bad"
+  },
+  {
+    "review": "Exelente la comida, la atención y el lugar y todo... Solo una observación con lo de la música, que estaba un poco alta y se dificultaba ordenar por q la muchacha no escuchaba bien y cuando el chef llamaba a las personas para darles el pedido tampoco se escuchaba muy bien.",
+    "class": "bad"
+  },
+  {
+    "review": "La comida no está mal, pero el servicio es simplemente FATAL, principalmente por parte del muchacho de anteojos, es un prepotente. Lastima porque el concepto que tienen esta bien, pero el trato es espantoso.",
+    "class": "bad"
+  },
+  {
+    "review": "Mi novio se intoxicó con una hamburguesa, no estaba bien cocida. El resto de los alimentos no estaban tan mal.",
+    "class": "bad"
+  },
+  {
+    "review": "La verdad que la comida no estaba mal, pero la muchacha que atiende tiene pésimo pésimo servicio, un modo horrible de atender cuando le pregunté qué cuales eran las opciones de las salsas para las papas me respondió súper grosera que leyera, obviamente yo sé leer pero nada le costaba explicar cuáles eran los ingredientes, y para terminar pido una pajilla para mí refresco y de la manera más grosera me responde que NO hay, ósea cobran 1000 por una coca en lata y no tienen una pajilla, y no sólo no tienen la pajilla que es una pequeñez sino que la señorita no tiene los modales para estar detrás de un mostrador y atender a los clientes! La comida en buena pero definitivamente no voy a volver ya que para mí es más importante recibir un buen trato que una comida rica, ya que comida rica hay en muchos lugares, espero que se tomen el tiempo de leer mi comentario y de al menos retro alimentar a la señorita detrás de la ventana",
+    "class": "bad"
+  },
+  {
+    "review": "Deliciosa la comida, calidad en los ingredientes y sin duda una función genial. Peroo! Lastima que la muchacha que cobra, no atiende no esté a tan merecida altura de la comida(por ella no tienen las 5 estrellas), sería importante trabajar en el tiempo de entrega de la orden, y alguien más ayudando. Gracias, xq ya llevo 4 platos de ustedes probados, y 10 de 10 la comida. Iré, xq el menú es muy amplio y bueno.",
+    "class": "bad"
+  },
+  {
+    "review": "Que lástima que duren tantísimo en preparar algo tan sencillo...",
+    "class": "bad"
+  },
+  {
+    "review": "Muy buena la comida, pero el tiempo de espera fue ridículo. Esperamos 45 minutos por nuestra orden, lo cual va en contra del concepto street food, lástima porque aunque la comida está deliciosa, no vale la pena la espera.",
+    "class": "bad"
+  }
+]

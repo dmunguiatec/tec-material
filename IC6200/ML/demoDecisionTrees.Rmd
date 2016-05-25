@@ -1,0 +1,65 @@
+---
+title: "Demostración Árboles de Decisión"
+author: "Diego Munguía"
+date: "May 15, 2016"
+output: html_document
+---
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(rpart)
+
+# load
+df <- read.csv('data/car_eval.csv')
+
+# clean
+set.seed(553513)
+sampleSize <- nrow(df)
+df$rgroup <- floor(sampleSize * runif(sampleSize))
+cut <- round(sampleSize * 0.1)
+
+testing <- df[df$rgroup %in% sort(df$rgroup)[1:cut],]
+training <- df[df$rgroup %in% sort(df$rgroup)[(cut + 1):sampleSize],]
+```
+
+## datos
+
+* tamaño de la muestra: `r nrow(df)`
+* tamaño conjunto de entrenamiento: `r nrow(training)`
+* tamaño conjunto de pruebas: `r nrow(testing)`
+* distribución de clases:
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+print(table(df$class))
+```
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+print(head(df))
+```
+
+## modelo
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+# train the model
+predictors <- names(df)
+predictors <- predictors[predictors != 'class' & predictors != 'rgroup']
+formula <- sprintf('class ~ %s', paste(predictors, collapse = ' + '))
+print(formula)
+
+decisionTree <- rpart(as.formula(formula), data = training)
+
+# plot the tree
+par(cex=0.7)
+plot(decisionTree)
+text(decisionTree)
+```
+
+## predicciones
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+# predictions
+testing$predclass <- predict(decisionTree, newdata = testing, type = 'class')
+cM <- table(real = testing$class, pred = testing$predclass)
+print(cM)
+```
+
+* Exactitud: `r sum(diag(cM)) / sum(cM)`
