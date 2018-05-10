@@ -1,0 +1,7 @@
+WS=5
+TERMINAL=3
+T__1=1
+T__0=2
+NOTERMINAL=4
+';'=2
+'->'=1

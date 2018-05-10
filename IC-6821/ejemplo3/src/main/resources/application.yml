@@ -1,0 +1,20 @@
+ej3:
+    db:
+        cls: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+        usr: ic6821
+        pwd: ic6821
+        url: jdbc:mysql://localhost:3306/ic6821_ej3
+    mongo:
+        db: ej3
+        url: mongodb://localhost:27017
+
+security:
+    basic:
+        enabled: false
+
+spring:
+    thymeleaf:
+        cache: false
+
+multipart:
+    maxFileSize: 10485760

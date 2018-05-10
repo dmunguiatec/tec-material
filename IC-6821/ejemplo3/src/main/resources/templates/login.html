@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="../../css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <p th:if="${param.logout}" class="alert">Has finalizado sesión.</p>
+        <p th:if="${param.error}" class="alert alert-error">Credenciales inválidas.</p>
+        <h2>Ingrese sus credenciales</h2>
+        <form class="form-horizontal" role="form" th:action="@{/login}" action="/login" method="POST">
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="username">Usuario: </label>
+                    <div class="col-sm-10">
+                        <input type="text" id="username" name="username" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="password">Clave: </label>
+                    <div class="col-sm-10">
+                        <input type="password" id="password" name="password" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" id="login" value="Ingresar" class="btn btn-primary" />
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div>
+        <div>
+            <p><strong>¿Todavía no tiene una cuenta?</strong></p>
+            <p><a href="/signup" th:href="@{/signup}">Regístrese</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -10,4 +10,12 @@ data/.DS_Store
 **/.envrc
 *_files/
 *_co.csv
-
+**/build
+**/out
+*.out
+*.iml
+*.ipr
+*.iws
+*.log
+*~
+**/.cabal*

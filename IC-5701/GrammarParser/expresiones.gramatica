@@ -1,0 +1,8 @@
+expr  -> term expr' ;
+expr' -> '+' term expr' ;
+expr' -> ε ;
+term  -> fact term' ;
+term' -> '*' fact term' ;
+term' -> ε ;
+fact  -> ID ;
+fact  -> '(' expr ')' ;

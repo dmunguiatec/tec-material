@@ -1,0 +1,1508 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="lang" content="es">
+<meta name="institute" content="&quot;Ingeniería en Computación, TEC&quot;">
+<meta name="author" content="&quot;Diego Munguía Molina&quot;">
+<meta name="header-includes" content=",- \usepackage{setspace},- \doublespacing,- \providecommand{\subtitle}[1]{\usepackage{titling} \posttitle{\par\large#1\end{center}}}">
+<meta name="geometry" content="margin=1in">
+<meta name="date" content="&quot;Agosto, 2017&quot;">
+<meta name="output" content="pdf_document"><style>body {
+  max-width: 980px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>"Análisis Asintótico"</title></head><body><article class="markdown-body"><h1 id="cotas-y-notacion-mathcalo-grande"><a name="user-content-cotas-y-notacion-mathcalo-grande" href="#cotas-y-notacion-mathcalo-grande" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Cotas y notación $\mathcal{O}$-grande</h1>
+<p>En términos generales, el análisis asintótico es una herramienta matemática que permite describir el comportamiento de una función en un límite. Específicamente en el contexto del análisis de algoritmos, permite determinar el orden de la tasa de crecimiento de una función de complejidad de tiempo o espacio cuando el tamaño de la entrada es muy grande &ndash;es decir, cuando $n$ tiende a infinito&ndash;. </p>
+<p>A través del análisis asintótico vamos a poder determinar cotas o límites superiores e inferiores para nuestras funciones $T(n)$ y $S(p)$. Si $g(n)$ es una cota superior de $T(n)$, entonces el tiempo de ejecución $T(n)$ nunca va a ser mayor que $c \cdot g(n)$, donde $c$ es una constante específica. Por otro lado, si $g(n)$ es una cota inferior de $T(n)$, entonces el tiempo de ejecución de $T(n)$ nunca va a ser menor que $c \cdot g(n)$, donde $c$ es una constante específica.</p>
+<p>Las cotas se denotan utilizando notación de $\mathcal{O}$-grande. A continuación se presenta esta notación junto con la definición formal del concepto de cotas. Estaremos volviendo constantemente a estas definiciones para demostrar nuestros resultados.</p>
+<p>Cota Superior<br />
+  ~ Decimos que $c \cdot g(n)$ es una cota superior de $f(n)$ si y sólo si existen $n_{0}$ y $c$ tal que $n_{0} \geq 0 \land c &gt; 0 \land c \cdot g(n) \geq f(n) \,, \forall n \geq n_{0}.\$ <br />
+  La cota superior se denota $f(n) = \mathcal{O}(g(n))\$</p>
+<p>Cota Inferior<br />
+  ~ Decimos que $c \cdot g(n)$ es una cota inferior de $f(n)$ si y sólo si existen $n_{0}$ y $c$ tal que $n_{0} \geq 0 \land c &gt; 0 \land c \cdot g(n) \leq f(n) \,, \forall n \geq n_{0}.\$ <br />
+  La cota inferior se denota $f(n) = \Omega(g(n))\$</p>
+<p>Cota Ajustada<br />
+  ~ Decimos que $g(n)$ provee una cota ajustada a $f(n)$ si y sólo si existen $n_{0}$, $c_{1}$ y $c_{2}$ tal que $n_{0} \geq 0 \land c_{1} &gt; 0 \land c_{2} &gt; 0 \land c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n) \,, \forall n \geq n_{0}.\$ <br />
+  La cota ajusta se denota $f(n) = \Theta(g(n))\$</p>
+<p>Notemos que con base en estas definiciones podemos concluir que $\mathcal{O}$, $\Omega$, y $\Theta$ <strong>no denotan funciones</strong>; denotan más bien conjuntos de funciones. Por esta razón, cuando se utiliza esta notación la expresión $f(n) = \mathcal{O}(g(n))$ debe leerse <em>&ldquo;$f(n)$ pertenece a $\mathcal{O}(g(n))$&rdquo;</em>.</p>
+<p><img alt="Cotas superior e inferior" id="fig:cotas" src="/home/diegomunguia/dev/TEC/IC3200/notas/plots/cotas.png" /></p>
+<p>La figura 1 presenta de manera gráfica un ejemplo de cotas para un función $f(n)$, representada por la línea contínua. La función $c_{1} \cdot g(n)$ representa la cota superior, tal que $f(n) = \mathcal{O}(g(n))$. La función $c_{2} \cdot g(n)$ representa la cota inferior, tal que $f(n) = \Omega(g(n))$. Finalmente tenemos un $c_{1}$ y $c_{2}$ que cumplen las condiciones de la cota ajustada, tal que $f(n) = \Theta(g(n))$. Notemos que la cota ajustada indica que una función $g(n)$, multiplicada por distintas constantes puede ser a la vez cota inferior y cota superior de $f(n)$; desde una perspectiva matemática podemos decir que </p>
+<p>\begin{equation}<br />
+f(n) = \mathcal{O}(g(n)) \land f(n) = \Omega(g(n)) \implies f(n) = \Theta(g(n))<br />
+\end{equation}</p>
+<p>Notemos también la línea vertical que demarca el punto $n_{0}$. Podemos observar que a la izquierda de $n_{0}$ las condiciones de las cotas no siempre se cumplen, y no es necesario de acuerdo con la definición. Estaremos interesados en el comportamiento de las funciones conforme estas van creciendo sobre el eje $n$, el tamaño de la entrada.</p>
+<h2 id="ejemplo-factorial"><a name="user-content-ejemplo-factorial" href="#ejemplo-factorial" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ejemplo: Factorial</h2>
+<p>Consideremos por ejemplo el algoritmo <code>factorial(n)</code>. Este algoritmo tiene una función de complejidad de tiempo </p>
+<p>\begin{equation}<br />
+T(n) = 5n + 3<br />
+\end{equation}</p>
+<p>Para encontrar las cotas de $T(n)$ podemos remitirnos a las definiciones. Estas nos indican que debemos encontrar valores para $c$ y $n_{0}$ que permitan cumplir con las relaciones establecidas. Esta búsqueda puede hacerse inicialmente como un tanteo de prueba y error, más adelante veremos que podemos hacer uso de límites y algunas propiedades del análisis asintótico para determinar las cotas con más rapidez.</p>
+<p>Volviendo al caso del <code>factorial(n)</code>, tenemos que </p>
+<p>$$<br />
+c = 6 \land n_{0} = 3 \land g(n) = n \implies 6n \geq 5n + 3 \,, \forall n \geq 3 \, \therefore T(n) = \mathcal{O}(n)<br />
+$$ </p>
+<p>$$<br />
+c = 5 \land n_{0} = 0 \land g(n) = n \implies 5n \leq 5n + 3 \,, \forall n \geq 0 \, \therefore T(n) = \Omega(n)<br />
+$$</p>
+<p>Puesto que tenemos $T(n) = \mathcal{O}(n)$ y $T(n) = \Omega(n)$, podemos concluir que $T(n) = \Theta(n)$.</p>
+<p><img alt="Cotas alg. Factorial" id="fig:cotas_fact" src="/home/diegomunguia/dev/TEC/IC3200/notas/plots/cotas_fact.png" /></p>
+<p>La figura 2 representa estos resultados de manera gráfica.</p>
+<h2 id="ejemplo-selection-sort"><a name="user-content-ejemplo-selection-sort" href="#ejemplo-selection-sort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ejemplo: Selection Sort</h2>
+<p>Consideremos ahora el caso general para el <em>selection sort</em>. </p>
+<p>\begin{equation}<br />
+T(n) = n^2 + 2n - 5<br />
+\end{equation}</p>
+<p>Utilizando las definiciones de análisis asintótico podemos demostrar que $T(n) = \mathcal{O}(n^2)$.</p>
+<p>$$<br />
+c = 2 \land n_{0} = 0 \implies 2n^2 \geq n^2 + 2n - 5 \,, \forall n \geq 0<br />
+$$</p>
+<p>Esta afirmación se puede poner a prueba simplificando la inecuación.</p>
+<p>$$<br />
+\begin{aligned}<br />
+2n^2 \geq n^2 + 2n - 5 \<br />
+2n^2 - n^2 \geq n^2 + 2n - 5 - n^2\<br />
+n^2 \geq 2n - 5 \<br />
+n = 0 \implies 0 \geq -5<br />
+\end{aligned}<br />
+$$</p>
+<p>A partir de $n = 0$ la función cuadrática va a crecer en un orden mayor que la lineal.</p>
+<p>Otra manera para resolver este problema es analizando cada término de la suma por separado ($n^2$, $2n$, $-5$).</p>
+<p>$$<br />
+\begin{aligned}<br />
+n^2 \geq n^2 \,, \forall n \geq 0 \<br />
+2n^2 \geq 2n \,, \forall n \geq 0 \<br />
+5n^2 \geq 5 \,, \forall n \geq 0<br />
+\end{aligned}<br />
+$$</p>
+<p>Por lo tanto, la siguiente inecuación es verdadera.</p>
+<p>$$<br />
+\begin{aligned}<br />
+n^2 + 2n^2 + 5n^2 \geq n^2 + 2n - 5 \<br />
+8n^2 \geq n^2 + 2n - 5 \<br />
+\end{aligned}<br />
+$$</p>
+<p>Y tenemos entonces que $T(n) = \mathcal{O}(n^2)$ cuando $c = 8$ y $n_{0} = 0$.</p>
+<p>Con respecto a la cota inferior, podemos afirmar que $T(n) = \Omega(n^2)$.</p>
+<p>$$<br />
+c = 1 \land n_{0} \geq 3 \implies n^2 &lt; n^2 + 2n - 5 \,, \forall n \geq 3<br />
+$$</p>
+<p>Simplificando la inecuación podemos encontrar el $n_{0}$ a partir del cual se cumple la condición de la cota.</p>
+<p>$$<br />
+\begin{aligned}<br />
+n^2 &lt; n^2 + 2n - 5 \<br />
+n^2 - n^2 &lt; n^2 + 2n - 5 - n^2 \<br />
+0 &lt; 2n - 5 \<br />
+5 &lt; 2n \<br />
+\frac{5}{2} &lt; n<br />
+\end{aligned}<br />
+$$</p>
+<p>Puesto que $T(n) = \mathcal{O}(n^2)$ y $T(n) = \Omega(n^2)$ podemos afirmar que $T(n) = \Theta(n^2)$. La figura 3 visualiza estos resultados.</p>
+<p><img alt="Cotas alg. Selection Sort" id="fig:cotas_selection_sort" src="/home/diegomunguia/dev/TEC/IC3200/notas/plots/cotas_selection_sort.png" /></p>
+<p>\newpage</p>
+<h2 id="ejercicios"><a name="user-content-ejercicios" href="#ejercicios" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ejercicios</h2>
+<ol>
+<li>Demuestre que $3n^2-5n-1 = \Theta(n^2)$</li>
+<li>Si $f(n) = n^2 + 2n - 5$, ¿$f(n) = \Theta(n)$? Explique su respuesta.</li>
+<li>Si $f(n) = n^2 + 2n - 5$, ¿$f(n) = \Theta(n^3)$? Explique su respuesta.</li>
+<li>Demuestre que $2n + \log n = \mathcal{O}(n)$</li>
+<li>Demuestre que $2^{n+1} = \Theta(2^n)$</li>
+<li>Demuestre que $(x + y)^2 = \mathcal{O}(x^2 + y^2)$</li>
+</ol>
+<p>\newpage</p>
+<h1 id="jerarquia-de-dominio"><a name="user-content-jerarquia-de-dominio" href="#jerarquia-de-dominio" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jerarquía de dominio</h1>
+<p>Los siguientes resultados pueden ayudar a establecer relaciones de orden entre funciones más fácilmente.</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+1 \leq n \,, \forall n \geq 1 \<br />
+\log n \leq n \,, \forall n \geq 2 \<br />
+n \leq n \log n \,, \forall n \geq 2 \<br />
+n \leq n^2 \,, \forall n \geq 1 \<br />
+n \log n \leq n^2 \,, \forall n \geq 1 \<br />
+n^2 \leq 2^n \,, \forall n \geq 4 \<br />
+2^n \leq n! \,, \forall n \geq 4<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>De una manera más general, se puede establecer el orden de las tasas de crecimiento de dos funciones a través del siguiente límite.</p>
+<p>\begin{equation}<br />
+f(n) \prec g(n) \iff \lim_{n \to \infty} \frac{f(n)}{g(n)} = 0<br />
+\end{equation}</p>
+<p>El operador $f(n) \prec g(n)$ se lee &ldquo;$f(n)$ tiene una tasa de crecimiento menor que $g(n)$&rdquo;</p>
+<p>De esta definición se puede derivar el siguiente resultado sobre potencias de $n$.</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+n^\alpha \prec n^\beta \iff \alpha &lt; \beta<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Podemos demostrar esta afirmación analizando el límite correspondiente.</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{n \to \infty} \frac{n^\alpha}{n^\beta} = \lim_{n \to \infty} \frac{1}{n^{\beta-\alpha}} = 0<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Este resultado lo podemos generalizar aún más, de potencias a funciones polinómicas. Recordemos que es común que las funciones de complejidad temporal y espacial presenten formas polinómicas.</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+p(x) = a_{n}x^n + a_{n-1}x^{n-1} + &hellip; + a_{1}x + a_{0} \<br />
+q(x) = b_{m}x^m + b_{m-1}x^{m-1} + &hellip; + b_{1}x + b_{0} \<br />
+\lim_{x \to \infty} \frac{p(x)}{q(x)} = 0 \iff m &gt; n<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>(Para la demostración de este resultado y un refrescamiento de algunos otros resultados importantes sobre límites ver el Apéndice I).</p>
+<p>Por lo tanto, se cumple que:</p>
+<p>\begin{equation}<br />
+p(x) \prec q(x) \iff m &gt; n<br />
+\end{equation}</p>
+<p>Utilizando este resultado rápidamente podemos comparar dos funciones polinómicas para determinar cuál tiene mayor tasa de crecimiento, por ejemplo $n^2 + 2n - 5 \prec n^3$ pues la relación entre el grado de los polinomios es $3 &gt; 2$.</p>
+<p>La siguiente relación entre funciones comúnes en el contexto de la complejidad algorítmica será de utilidad a partir de este punto.</p>
+<p>\begin{equation}<br />
+1 \prec \log n \prec n \prec n \log n \prec n^2 \prec n^3 \prec 2^n \prec n!<br />
+\end{equation}</p>
+<p><img alt="Jerarquía de funciones" id="fig:jerarquia" src="/home/diegomunguia/dev/TEC/IC3200/notas/plots/jerarquia.png" /></p>
+<p>\newpage</p>
+<h1 id="propiedades-de-mathcalo"><a name="user-content-propiedades-de-mathcalo" href="#propiedades-de-mathcalo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Propiedades de $\mathcal{O}$</h1>
+<ol>
+<li>$\mathcal{O}(f(n)) + \mathcal{O}(g(n)) = \mathcal{O}(f(n) + g(n))$</li>
+<li>$\mathcal{O}(f(n) + g(n)) = \mathcal{O}(\max(f(n), g(n)))$</li>
+<li>$\mathcal{O}(f_{1}(n) + f_{2}(n) + &hellip; + f_{m}(n)) = \mathcal{O}(\max(f_{1}(n), f_{2}(n), &hellip;, f_{m}(n)))$</li>
+<li>$n^\alpha = \mathcal{O}(n^\beta) \,, \alpha \leq \beta$</li>
+<li>$f(n) = \mathcal{O}(f(n))$</li>
+<li>$c \cdot \mathcal{O}(f(n)) = \mathcal{O}(f(n))$</li>
+<li>$\mathcal{O}(\mathcal{O}(f(n))) = \mathcal{O}(f(n))$</li>
+<li>$\mathcal{O}(f(n)) \mathcal{O}(g(n)) = \mathcal{O}(f(n) g(n))$</li>
+<li>$\mathcal{O}(f(n) g(n)) = f(n) \mathcal{O}(g(n))$</li>
+<li>$f(n) = \mathcal{O}(g(n)) \land g(n) = \mathcal{O}(h(n)) \implies f(n) = \mathcal{O}(h(n))$</li>
+</ol>
+<p>A continuación ejemplificamos cómo partiendo de una función inicial podemos simplificarla para encontrar su orden de crecimiento. </p>
+<p>Partimos de la siguiente función.</p>
+<p>$$<br />
+T(n) = n^2 + 2n - 5<br />
+$$</p>
+<p>Por definición podemos manejar cada uno de sus términos como una categoría de funciones individual.</p>
+<p>$$<br />
+T(n) = \mathcal{O}(n^2) + \mathcal{O}(2n) + \mathcal{O}(-5)<br />
+$$</p>
+<p>Esta expresión la podemos simplificar al término de mayor orden utilizando las propiedades anteriormente descritas.</p>
+<p>Iniciemos de atrás hacia adelante.</p>
+<p>$$<br />
+g(n) = -5 = -5 \cdot 1 \implies \mathcal{O}(g(n)) = \mathcal{O}(-5) = \mathcal{O}(-5 \cdot 1) \<br />
+$$</p>
+<p>Aplicando la propiedad (9)</p>
+<p>$$<br />
+\mathcal{O}(-5 \cdot 1) = -5 \cdot \mathcal{O}(1)<br />
+$$</p>
+<p>Aplicando la propiedad (6)</p>
+<p>$$<br />
+-5 \cdot \mathcal{O}(1) = \mathcal{O}(1)<br />
+$$</p>
+<p>Obtenemos entonces</p>
+<p>\begin{equation}<br />
+T(n) = \mathcal{O}(n^2) + \mathcal{O}(2n) + \mathcal{O}(-5) = \mathcal{O}(n^2) + \mathcal{O}(2n) + \mathcal{O}(1)<br />
+\end{equation}</p>
+<p>Analizando el término del medio y aplicando la propiedad (9) tenemos</p>
+<p>\begin{equation}<br />
+\mathcal{O}(2n) = 2 \cdot \mathcal{O}(n)<br />
+\end{equation}</p>
+<p>Aplicando la propiedad (6)</p>
+<p>\begin{equation}<br />
+2 \cdot \mathcal{O}(n) = \mathcal{O}(n)<br />
+\end{equation}</p>
+<p>Volviendo a $T(n)$ tenemos</p>
+<p>\begin{equation}<br />
+T(n) = \mathcal{O}(n^2) + \mathcal{O}(2n) + \mathcal{O}(1) = \mathcal{O}(n^2) + \mathcal{O}(n) + \mathcal{O}(1)<br />
+\end{equation}</p>
+<p>Aplicando la propiedad (1)</p>
+<p>\begin{equation}<br />
+T(n) = \mathcal{O}(n^2) + \mathcal{O}(n) + \mathcal{O}(1) = \mathcal{O}(n^2 + n + 1)<br />
+\end{equation}</p>
+<p>Sabemos por la jerarquía de funciones que $1 \prec n \prec n^2$ y aplicando la propiedad (2) tenemos entonces</p>
+<p>\begin{equation}<br />
+T(n) = \mathcal{O}(n^2 + n + 1) = \mathcal{O}(n^2)<br />
+\end{equation}</p>
+<p>Por lo tanto</p>
+<p>\begin{equation}<br />
+T(n) = n^2 + 2n - 5 = \mathcal{O}(n^2)<br />
+\end{equation}</p>
+<p>Conociendo estas propiedades y la jerarquía de funciones, en la práctica cuando queramos categorizar una función según su orden podemos saltar al último paso identificando el término de mayor crecimiento.</p>
+<p>Por ejemplo, si tenemos $T(n) = 3n + 3$ podemos identificar que $3n$ es el término de mayor crecimiento y afirmar que $T(n) = 3n + 3 = \mathcal{O}(n)$. El desarrollo de todos los pasos sería necesario únicamente si se nos solicita una demostración formal del resultado.</p>
+<p>Procedemos a continuación a demostrar las propiedades (1) y (2).</p>
+<h2 id="demostracion-de-la-propiedad-1"><a name="user-content-demostracion-de-la-propiedad-1" href="#demostracion-de-la-propiedad-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Demostración de la propiedad (1)</h2>
+<p>\begin{equation}<br />
+\mathcal{O}(f(n)) + \mathcal{O}(g(n)) = \mathcal{O}(f(n) + g(n))<br />
+\end{equation}</p>
+<p>Debemos recordar que $\mathcal{O}$ representa un conjunto de funciones y por tanto cuando se utiliza el operador &ldquo;$=$&rdquo; estamos hablando de pertenencia al conjunto. Podemos reinterpretar entonces nuestra ecuación anterior como una relación entre conjuntos.</p>
+<p>\begin{equation}<br />
+\mathcal{O}(f(n)) + \mathcal{O}(g(n)) \subseteq \mathcal{O}(f(n) + g(n))<br />
+\end{equation}</p>
+<p>A partir de este hecho, nuestra estrategia de demostración será probar que toda función $h(n)$ que esté en $\mathcal{O}(f(n)) + \mathcal{O}(g(n))$ también debe estar en $\mathcal{O}(f(n) + g(n))$.</p>
+<p>De manera más formal, $\mathcal{O}(f(n)) + \mathcal{O}(g(n)) = \mathcal{O}(f(n) + g(n))$ si y sólo si $\exists h$ tal que $h(n) = \mathcal{O}(f(n)) + \mathcal{O}(g(n)) \implies h(n) = \mathcal{O}(f(n) + g(n))$.</p>
+<p>Volviendo a la definición de cota superior, si $h(n) = \mathcal{O}(f(n)) + \mathcal{O}(g(n))$ quiere decir que $\exists c_{f} &gt; 0 \,, c_{g} &gt; 0 \,, n_{f0} \geq 0 \,, n_{g0} \geq 0$ tal que </p>
+<p>\begin{equation}<br />
+h(n) \leq c_{f} \cdot f(n) + c_{g} \cdot g(n) \,, \forall n \geq n_{f0} \land n \geq n_{g0}<br />
+\end{equation}</p>
+<p>Con respecto a las $n$ es importante notar que</p>
+<p>\begin{equation}<br />
+n \geq n_{f0} \land n \geq n_{g0} \implies n \geq \max(n_{f0}, n_{g0})<br />
+\end{equation}</p>
+<p>Definiendo un nuevo valor $n_0 = \max(n_{f0}, n_{g0})$ tenemos entonces</p>
+<p>\begin{equation}<br />
+n \geq n_{f0} \land n \geq n_{g0} \implies n \geq n_0<br />
+\end{equation}</p>
+<p>Esta afirmación nos será de utilidad al final de la prueba.</p>
+<p>Ahora, partimos de las siguientes desigualdades</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+f(n) \leq f(n) + g(n) \<br />
+g(n) \leq g(n) + f(n)<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Multiplicando por sus respectivas constantes a ambos lados de las desigualdades</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+c_{f} \cdot f(n) \leq c_{f} \cdot (f(n) + g(n)) \<br />
+c_{g} \cdot g(n) \leq c_{g} \cdot (g(n) + f(n))<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Podemos sumar ambas inecuaciones manteniendo la relación</p>
+<p>\begin{equation}<br />
+c_{f} \cdot f(n) + c_{g} \cdot g(n) \leq c_{f} \cdot (f(n) + g(n)) + c_{g} \cdot (g(n) + f(n))<br />
+\end{equation}</p>
+<p>Volviendo a la ecuación (32) tenemos entonces que</p>
+<p>\begin{equation}<br />
+h(n) \leq c_{f} \cdot f(n) + c_{g} \cdot g(n) \leq c_{f} \cdot (f(n) + g(n)) + c_{g} \cdot (g(n) + f(n)) \,, \forall n \geq n_0<br />
+\end{equation}</p>
+<p>Por transitividad</p>
+<p>\begin{equation}<br />
+h(n) \leq c_{f} \cdot (f(n) + g(n)) + c_{g} \cdot (g(n) + f(n)) \,, \forall n \geq n_0<br />
+\end{equation}</p>
+<p>Factorizando por el factor común $f(n) + g(n)$</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+h(n) \leq (f(n) + g(n)) (c_{f} + c_{g}) \,, \forall n \geq n_0 \<br />
+h(n) \leq (c_{f} + c_{g}) (f(n) + g(n)) \,, \forall n \geq n_0<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Definiendo una nueva constante $c = (c_{f} + c_{g})$ tenemos</p>
+<p>\begin{equation}<br />
+h(n) \leq c \cdot (f(n) + g(n)) \,, \forall n \geq n_0<br />
+\end{equation}</p>
+<p>Por tanto concluimos que </p>
+<p>\begin{equation}<br />
+h(n) = \mathcal{O}(f(n) + g(n))<br />
+\end{equation}</p>
+<p>Queda demostrado que toda función $h(n)$ que esté en $\mathcal{O}(f(n)) + \mathcal{O}(g(n))$ también está en $\mathcal{O}(f(n) + g(n))$ y con esto se demuestra la veracidad de la propiedad (1).</p>
+<h2 id="demostracion-de-la-propiedad-2"><a name="user-content-demostracion-de-la-propiedad-2" href="#demostracion-de-la-propiedad-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Demostración de la propiedad (2)</h2>
+<p>\begin{equation}<br />
+\mathcal{O}(f(n) + g(n)) = \mathcal{O}(\max(f(n), g(n)))<br />
+\end{equation}</p>
+<p>Para esta demostración utilizaremos la misma estrategia de la demostración anterior. Esto es que todo $h(n)$ que esté al lado izquierdo de la ecuación también debe estar al lado derecho. Más formalmente</p>
+<p>\begin{equation}<br />
+h(n) = \mathcal{O}(f(n) + g(n)) \implies h(n) = \mathcal{O}(\max(f(n), g(n)))<br />
+\end{equation}</p>
+<p>Partimos de $h(n) = \mathcal{O}(f(n) + g(n))$, volviendo a la definición</p>
+<p>\begin{equation}<br />
+h(n) \leq c (f(n) + g(n)) \,, \forall n \geq n_0<br />
+\end{equation}</p>
+<p>Debemos manejar dos posibles casos, el primer caso se da cuando $f(n) \geq g(n)$</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+f(n) + g(n) \leq f(n) + f(n) \<br />
+f(n) + g(n) \leq 2 \cdot f(n)<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>El otro caso se da cuando $g(n) \geq f(n)$</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+f(n) + g(n) \leq g(n) + g(n) \<br />
+f(n) + g(n) \leq 2 \cdot g(n)<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Tenemos entonces las inecuaciones </p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+f(n) + g(n) \leq 2 \cdot f(n) \<br />
+f(n) + g(n) \leq 2 \cdot g(n)<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Que podemos generalizar de esta manera</p>
+<p>\begin{equation}<br />
+f(n) + g(n) \leq 2 (\max(f(n), g(n)))<br />
+\end{equation}</p>
+<p>Multiplicando por $c$ a ambos lados de la inecuación</p>
+<p>\begin{equation}<br />
+c \cdot (f(n) + g(n)) \leq c \cdot 2 (\max(f(n), g(n)))<br />
+\end{equation}</p>
+<p>Volviendo a $h(n)$ se cumple que</p>
+<p>\begin{equation}<br />
+h(n) \leq c \cdot (f(n) + g(n)) \leq 2c (\max(f(n), g(n))) \,, \forall n \geq n_0<br />
+\end{equation}</p>
+<p>Por transitividad</p>
+<p>\begin{equation}<br />
+h(n) \leq 2c (\max(f(n), g(n))) \,, \forall n \geq n_0<br />
+\end{equation}</p>
+<p>Por lo tanto</p>
+<p>\begin{equation}<br />
+h(n) = \mathcal{O}(\max(f(n), g(n)))<br />
+\end{equation}</p>
+<p>Queda demostrado entonces que toda función $h(n)$ que esté en $\mathcal{O}(f(n) + g(n))$ también está en $\mathcal{O}(\max(f(n), g(n)))$. Con esto se verifica la propiedad (2).</p>
+<h2 id="ejercicios_1"><a name="user-content-ejercicios_1" href="#ejercicios_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ejercicios</h2>
+<p>Construir demostraciones para las propiedades (3) a la (10)</p>
+<h1 id="cotas-no-ajustadas-asintoticamente"><a name="user-content-cotas-no-ajustadas-asintoticamente" href="#cotas-no-ajustadas-asintoticamente" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Cotas no ajustadas asintóticamente</h1>
+<p>El análisis asintótico también permite determinar cotas no ajustadas asintóticamente.</p>
+<p>Cota Superior No Ajustada Asintóticamente<br />
+  ~ Decimos que $g(n)$ es una cota superior no ajustada asintóticamente de $f(n)$ si y sólo si $\forall c &gt; 0 \,, \exists n_0 &gt; 0$ tal que $0 \leq f(n) &lt; c \cdot g(n) \,, \forall n \geq n_0\$ <br />
+  La cota superior no ajustada asintóticamente se denota $f(n) = o(g(n))\$</p>
+<p>Cota Inferior No Ajustada Asintóticamente<br />
+  ~ Decimos que $g(n)$ es una cota inferior no ajustada asintóticamente de $f(n)$ si y sólo si $\forall c &gt; 0 \,, \exists n_0 &gt; 0$ tal que $0 \leq c \cdot g(n) &lt; f(n) \,, \forall n \geq n_0\$ <br />
+  La cota inferior no ajustada asintóticamente se denota $f(n) = \omega(g(n))\$</p>
+<p>Estas cotas son más estrictas, por ejemplo si un algoritmo tiene una complejidad de tiempo $T(n) = o(n^2)$ quiere decir que se comporta mejor que cualquier algoritmo con complejidad de tiempo cuadrática. Su función de tiempo puede acercarse a $n^2$ pero <strong>nunca</strong> va a llegar a ser $n^2$.</p>
+<p>Para ilustrar más allá este punto, consideremos las funciones $f_1(n)=2n^2$, $f_2(n)=2n$, y $f_3(n)=2n^3$. Tenemos por definición que </p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+f_1(n)=2n^2=\mathcal{O}(n^2) \<br />
+f_1(n)=2n^2 \neq o(n^2)<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+f_2(n)=2n=\mathcal{O}(n^2) \<br />
+f_2(n)=2n=o(n^2)<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+f_1(n)=2n^2=\Omega(n^2) \<br />
+f_1(n)=2n^2 \neq \omega(n^2)<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+f_3(n)=2n^3=\Omega(n^2) \<br />
+f_3(n)=2n^3=\omega(n^2)<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Es importante además notar que </p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+f(n)=o(g(n)) \implies \lim_{n \to \infty} \frac{f(n)}{g(n)} = 0 \<br />
+f(n)=\omega(g(n)) \implies \lim_{n \to \infty} \frac{f(n)}{g(n)} = \infty<br />
+\end{aligned}<br />
+\end{equation}</p>
+<h2 id="ejercicios_2"><a name="user-content-ejercicios_2" href="#ejercicios_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ejercicios</h2>
+<ol>
+<li>Demuestre que $f(n)=2n^3 + 100n^2 + 1000n=o(n^4)$</li>
+<li>Demuestre que $o(g(n))\cap\omega(g(n))=\varnothing$</li>
+</ol>
+<h1 id="apendice-i-limites"><a name="user-content-apendice-i-limites" href="#apendice-i-limites" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Apéndice I. Límites.</h1>
+<p>Los límites son herramientas útiles para analizar el comportamiento de crecimiento de las funciones conforme crece el tamaño de la entrada.</p>
+<p>Recordemos algunos resultados importantes sobre límites.</p>
+<ol>
+<li>$\lim_{x \to \alpha} k = k$</li>
+<li>$\lim_{x \to \alpha} k \cdot f(x) = k \cdot \lim_{x \to \alpha} f(x)$</li>
+<li>$\lim_{x \to \infty} \frac{k}{x^n} = 0$</li>
+<li>$\lim_{x \to \alpha} f(x) = L \land \lim_{x \to \alpha} g(x) = M \implies \lim_{x \to \alpha} (f(x) + g(x)) = L + M$</li>
+<li>$\lim_{x \to \alpha} f(x) = L \land \lim_{x \to \alpha} g(x) = M \implies \lim_{x \to \alpha} (f(x) \cdot g(x)) = L \cdot M$</li>
+</ol>
+<p>Con base en estos resultados podemos demostrar que</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+p(x) = a_{n}x^n + a_{n-1}x^{n-1} + &hellip; + a_{1}x + a_{0} \<br />
+q(x) = b_{m}x^m + b_{m-1}x^{m-1} + &hellip; + b_{1}x + b_{0} \<br />
+\lim_{x \to \infty} \frac{p(x)}{q(x)} = 0 \iff m &gt; n<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Factorizando $x^n$ en $p(x)$ se obtiene</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+a_{n}x^n + a_{n-1}x^{n-1} + &hellip; + a_{1}x + a_{0} = x^n(a_n + \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + &hellip; + \frac{a_1}{x^{n-1}} + \frac{a_0}{x^n})<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Factorizando $x^m$ en $q(x)$ se obtiene</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+b_{m}x^m + b_{m-1}x^{m-1} + &hellip; + b_{1}x + b_{0} = x^m(b_m + \frac{b_{m-1}}{x} + \frac{b_{m-2}}{x^2} + &hellip; + \frac{b_1}{x^{m-1}} + \frac{b_0}{x^m})<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Estas factorizaciones nos permitirán simplificar la resolución del límite. </p>
+<p>Trabajando con $p(x)$ y $q(x)$ por separado obtenemos las siguientes expresiones</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} p(x) = \lim_{x \to \infty} x^n(a_n + \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + &hellip; + \frac{a_1}{x^{n-1}} + \frac{a_0}{x^n}) \ <br />
+\lim_{x \to \infty} q(x) = \lim_{x \to \infty} x^m(b_m + \frac{b_{m-1}}{x} + \frac{b_{m-2}}{x^2} + &hellip; + \frac{b_1}{x^{m-1}} + \frac{b_0}{x^m})<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Por claridad declaramos las siguientes variables</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\alpha = (a_n + \frac{a_{n-1}}{x} + \frac{a_{n-2}}{x^2} + &hellip; + \frac{a_1}{x^{n-1}} + \frac{a_0}{x^n}) \ <br />
+\beta = (b_m + \frac{b_{m-1}}{x} + \frac{b_{m-2}}{x^2} + &hellip; + \frac{b_1}{x^{m-1}} + \frac{b_0}{x^m})<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Volviendo a la ecuación (62) y utilizando el resultado (5) podemos separar cada expresión en dos límites</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} x^n \cdot \alpha = \lim_{x \to \infty} x^n \cdot \lim_{x \to \infty} \alpha \<br />
+\lim_{x \to \infty} x^m \cdot \beta = \lim_{x \to \infty} x^m \cdot \lim_{x \to \infty} \beta<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Ocupémonos ahora de $\alpha$ y $\beta$. Utilizando el resultado (4) podemos separar el límite de la suma de los términos en la suma del límite de cada término de la siguiente manera</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} \alpha = \lim_{x \to \infty} a_n + \lim_{x \to \infty} \frac{a_{n-1}}{x} + &hellip; + \lim_{x \to \infty} \frac{a_0}{x^n} \<br />
+\lim_{x \to \infty} \beta = \lim_{x \to \infty} b_m + \lim_{x \to \infty} \frac{b_{m-1}}{x} + &hellip; + \lim_{x \to \infty} \frac{b_0}{x^m} <br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Utilizando el resultado (3) podemos eliminar todos los términos de cada expresión que tengan la forma $\lim_{x \to \infty} \frac{k}{x^n}$</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} \alpha = \lim_{x \to \infty} a_n \<br />
+\lim_{x \to \infty} \beta = \lim_{x \to \infty} b_m<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Volviendo a la ecuación (62) tenemos</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} p(x) = \lim_{x \to \infty} x^n \cdot \lim_{x \to \infty} a_n \ <br />
+\lim_{x \to \infty} q(x) = \lim_{x \to \infty} x^m \cdot \lim_{x \to \infty} b_m<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>Aplicando el resultado (1) tenemos</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} p(x) = a_n \cdot \lim_{x \to \infty} x^n\ <br />
+\lim_{x \to \infty} q(x) = b_m \cdot \lim_{x \to \infty} x^m<br />
+\end{aligned}<br />
+\end{equation}</p>
+<p>A través del resultado (5) podemos volver a la expresión original</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} \frac{p(x)}{q(x)} = \frac{a_n \cdot \lim_{x \to \infty} x^n}{b_m \cdot \lim_{x \to \infty} x^m} = \frac{a_n}{b_m} \cdot \frac{\lim_{x \to \infty} x^n}{\lim_{x \to \infty} x^m}<br />
+\end{aligned} <br />
+\end{equation}</p>
+<p>Aplicando nuevamente el resultado (5)</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} \frac{p(x)}{q(x)} = \frac{a_n}{b_m} \cdot \lim_{x \to \infty} \frac{x^n}{x^m}<br />
+\end{aligned} <br />
+\end{equation}</p>
+<p>Sabemos que $m &gt; n$ </p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} \frac{p(x)}{q(x)} = \frac{a_n}{b_m} \cdot \lim_{x \to \infty} \frac{1}{x^{m-n}}<br />
+\end{aligned} <br />
+\end{equation}</p>
+<p>Por resultado (3)</p>
+<p>\begin{equation}<br />
+\begin{aligned}<br />
+\lim_{x \to \infty} \frac{p(x)}{q(x)} = \frac{a_n}{b_m} \cdot 0 = 0<br />
+\end{aligned} <br />
+\end{equation}</p>
+<p>QED.</p></article></body></html>
