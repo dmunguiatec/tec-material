@@ -12,8 +12,6 @@ output: pdf_document
 lang: es
 ---
 
-# Introducción #
-
 >*"El problema real es que los programadores han gastado mucho tiempo preocupándose por la eficiencia en los lugares equivocados y en los momentos equivocados; la optimización prematura es la raíz de todos los males (o por lo menos de la mayoría) en programación."* --D. Knuth (Conferencia Premio Turing ACM, 1974)
 
 La eficiencia de los procesos computacionales ha sido un eje fundamental en el desarrollo de las ciencias de la computación. Podemos hipotetizar algunas razones del porqué de nuestro interés por la eficiencia: podríamos decir que es una predisposición natural en ingeniería; además los recursos de hardware, aunque se mantienen en constante evolución, históricamente han sido escasos; y finalmente, no hemos podido solucionar la completitud de todos los problemas computacionales que existen. Con cada avance en software y hardware aparecen nuevos problemas que empujan los límites de la disciplina.
@@ -112,4 +110,10 @@ En los siguientes capítulos se presentarán algunas herramientas lógicas y mat
 
 Esto nos permitirá hacer observaciones y análisis sobre el diseño de algoritmos y conocer sobre los límites del campo de la computación.
 
+## Referencias
 
+Centro de Informática UCR (s.f.) 35 aniversario Centro de Informática Universidad de Costa Rica. Disponible en: https://ci.ucr.ac.cr/sites/default/files/informaciondigital/revistaci2baja.pdf
+
+Knuth, D. (1974) Computer Programming as an Art. Communications of the ACM, Vol. 17, No. 12.
+
+Knuth, D. (1974) Structured Programming with go to statements. Computing Surveys, Vol. 6, No. 4
