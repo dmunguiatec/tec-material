@@ -20,7 +20,7 @@ Las primeras computadoras contaban con recursos muy limitados. ENIAC (1943) pod�
 
 Con estas limitaciones, los investigadores en ciencias de la computación, ingenieros de sistemas computacionales e ingenieros de software se han visto obligados a pensar creativamente en sus soluciones, aprovechándose del hecho de que usualmente existe más de una forma de resolver un mismo problema computacional. La meta desde ese entonces ha sido resolver el problema utilizando la menor cantidad de recursos computacionales posibles.
 
-Pero qué pasa hoy en día que contamos con procesadores de múltiples núcleos, que corren con frecuencias de reloj de 3 GHz o más, y con capacidades de memoria y almacenamique se pueden medir en terabytes. ¿Sigue siendo la eficiencia un problema que nos concierne? Una posible respuesta a esta pregunta podría ser "hoy más que nunca". La tecnología computacional hoy en día está más presente que nunca en nuestras sociedades, principalmente en forma de dispositivos móviles. Podemos encontrarla en poblaciones urbanas y rurales, y en diversos estratos culturales y socioeconómicos. Atrás han quedado los tiempos en que la computación era asunto exclusivo de militares, empresarios y académicos. No sólo están estos dispositivos presentes en vastas extensiones de las sociedades humanas, sino que están además conectados entre sí a través de internet. Un efecto de esta ubicuidad computacional es la producción de masivas cantidades de datos que pueden ser procesados, llevando nuevamente al límite problemas clásicos que se pensaban resueltos para todo efecto práctico. 
+Pero qué pasa hoy en día que contamos con procesadores de múltiples núcleos, que corren con frecuencias de reloj de 3 GHz o más, y con capacidades de memoria y almacenamique se pueden medir en terabytes. ¿Sigue siendo la eficiencia un problema que nos concierne? Una posible respuesta a esta pregunta podría ser "hoy más que nunca". La tecnología computacional hoy en día está más presente que nunca en nuestras sociedades, principalmente en forma de dispositivos móviles. Podemos encontrarla en poblaciones urbanas y rurales, y en diversos estratos culturales y socioeconómicos. Atrás han quedado los tiempos en que la computación era asunto exclusivo de militares, empresarios y académicos. No sólo están estos dispositivos presentes en vastas extensiones de las sociedades humanas, sino que están además conectados entre sí a través de internet. Un efecto de esta ubicuidad computacional es la producción de masivas cantidades de datos que pueden ser procesados, llevando nuevamente al límite problemas clásicos que se pensaban resueltos para todo efecto práctico.
 
 ## Problemas computacionales y algoritmos ##
 
@@ -93,6 +93,34 @@ Más allá de esta idea, no hay un consenso sobre una definición exhaustiva del
 * Desde una perspectiva teórica, el algoritmo debe ser *correcto* o *eficaz*, es decir debe resolver el problema general.
 
 * Desde una perspectiva práctica, el algoritmo debe ser *eficiente*, es decir debe llegar a una solución utilizando la menor cantidad de recursos posibles.
+
+### Ejercicios ###
+
+Formalice como problema computacional los siguientes problemas:
+
+1. Sumar dos números enteros.
+
+2. Calcular el residuo de la división entera.
+
+3. Calcular el factorial de un número entero.
+
+4. Determinar si un número es par.
+
+5. Calcular el largo de una lista.
+
+6. Las operaciones `push` y `pop` en una pila.
+
+7. Concatenar dos hileras.
+
+8. Determinar si una hilera es palíndrome.
+
+9. Determinar si una hilera es subhilera de otra.
+
+10. Encontrar un camino entre dos vértices de un grafo.
+
+11. Lanzar un dado.
+
+12. Buscar todos los registros en una colección que calcen con un criterio dado. Por ejemplo encontrar todas las personas de una colección cuyo primer nombre sea "María".
 
 ## Eficiencia ##
 
