@@ -4,7 +4,7 @@ Este es un ejemplo de código que no cumple con el principio abierto/cerrado (OC
 
 ## Diseño ##
 
-![Diagrama de clase](./SOLID-OCP.png)
+![Diagrama de clase](./SOLID-OCP-LSP.png)
 
 ## Utilización ##
 
