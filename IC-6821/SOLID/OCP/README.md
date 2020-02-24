@@ -21,8 +21,12 @@ El programa corre un CLI para hacer evaluación de expresiones aritméticas infi
 -2
 > 3 - 6
 -3
-> exit
-Finishing process
+> 1.0 + 3
+Expresión inválida: error de sintaxis
+> 1+3
+Expresión inválida: error de sintaxis
+> salir
+Finalizando el proceso
 ```
 
 ## Análisis de OCP ##

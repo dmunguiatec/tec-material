@@ -1,4 +1,4 @@
-enum BinaryOperation {
+enum Operation {
     ADD,
     SUB,
     MUL,
