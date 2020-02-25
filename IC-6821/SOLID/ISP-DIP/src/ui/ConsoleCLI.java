@@ -1,3 +1,10 @@
+package ui;
+
+import expr.Expression;
+import expr.ExpressionType;
+import expr.parser.ExpressionParser;
+import expr.parser.RegexExpressionParser;
+
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -22,7 +29,7 @@ public class ConsoleCLI implements CLI {
                 Optional result = Optional.empty();
                 switch (expression.getType()) {
                     case INT: result = Optional.of(expression.evaluateInt()); break;
-                    case FP: result = Optional.of(expression.evaluteFP()); break;
+                    case FP: result = Optional.of(expression.evaluateFP()); break;
                 }
 
                 if (result.isPresent()) {

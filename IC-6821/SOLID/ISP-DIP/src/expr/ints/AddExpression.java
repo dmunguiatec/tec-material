@@ -1,7 +1,11 @@
+package expr.ints;
+
+import expr.Expression;
+import expr.ExpressionType;
+
 public class AddExpression implements Expression {
 
-    private Integer operandA;
-    private Integer operandB;
+    private int operandA, operandB;
 
     public AddExpression(int operandA, int operandB) {
         this.operandA = operandA;
@@ -10,7 +14,7 @@ public class AddExpression implements Expression {
 
     @Override
     public ExpressionType getType() {
-        return null;
+        return ExpressionType.INT;
     }
 
     @Override

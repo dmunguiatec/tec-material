@@ -1,8 +1,14 @@
+package expr.parser;
+
+import expr.Expression;
+import expr.creator.ExpressionCreator;
+import expr.creator.FactoryMethodExpressionCreator;
+
 public class RegexExpressionParser implements ExpressionParser {
 
-    public static final int OPERAND_A = 0;
-    public static final int OPERATOR = 1;
-    public static final int OPERAND_B = 2;
+    private static final int OPERAND_A = 0;
+    private static final int OPERATOR = 1;
+    private static final int OPERAND_B = 2;
 
 
     @Override
@@ -10,7 +16,7 @@ public class RegexExpressionParser implements ExpressionParser {
         ExpressionCreator expressionCreator = FactoryMethodExpressionCreator.getInstance();
 
         String[] tokens = expressionLine.split("\\s");
-        if (tokens[OPERAND_A].contains(".") || tokens[OPERAND_B].contains(".")) {
+        if (hasFPOperands(tokens)) {
             double operandA = Double.parseDouble(tokens[OPERAND_A]);
             double operandB = Double.parseDouble(tokens[OPERAND_B]);
 
@@ -23,8 +29,12 @@ public class RegexExpressionParser implements ExpressionParser {
         }
     }
 
+    private boolean hasFPOperands(String[] tokens) {
+        return tokens[OPERAND_A].contains(".") || tokens[OPERAND_B].contains(".");
+    }
+
     @Override
     public boolean validate(String expressionLine) {
-        return expressionLine.matches("\\-?[0-9]+(\\.[0-9]*)?\\s+[\\+\\-\\*]\\s\\-?[0-9]+(\\.[0-9]*)?");
+        return expressionLine.matches("\\-?[0-9]+(\\.[0-9]*)?\\s+[\\+\\-\\*\\/]\\s\\-?[0-9]+(\\.[0-9]*)?");
     }
 }

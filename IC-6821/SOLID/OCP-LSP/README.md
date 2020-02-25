@@ -32,7 +32,7 @@ Finalizando el proceso
 ## Análisis de OCP ##
 
 * ¿Cuáles son las implicaciones de agregar un nuevo operador? Por ejemplo el operador para calcular el cociente de la división entera `/ `.
-* ¿Cómo se podría rediseñar el módulo para cumplir con SRP?
+* ¿Cómo se podría rediseñar el módulo para cumplir con OCP?
 
 ## Análisis de LSP ##
 
