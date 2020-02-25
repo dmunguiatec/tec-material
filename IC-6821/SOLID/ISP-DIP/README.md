@@ -4,7 +4,7 @@ Este es un ejemplo de código que no cumple con el principio de segregación de 
 
 ## Diseño ##
 
-![Diagrama de clase](./SOLID-ISP.png)
+![Diagrama de clase](./SOLID-ISP-DIP.png)
 ![Diagrama de secuencia](./SOLID-ISP-seq.png)
 
 ## Utilización ##
