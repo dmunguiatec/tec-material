@@ -1,6 +1,6 @@
 # Evaluador de expresiones
 
-Este es un ejemplo de código que no cumple con el principio abierto/cerrado (OCP) ni con el principio de sustitución de Liskov.
+Este es un ejemplo de código que no cumple con el principio abierto/cerrado (OCP) ni con el principio de sustitución de Liskov (LSP).
 
 ## Diseño ##
 
@@ -36,7 +36,7 @@ Finalizando el proceso
 
 ## Análisis de LSP ##
 
-* ¿Cuáles son las implicaciones de agregar un nuevo tipo de expresiones? Por ejemplo expresiones relacionales o lógicas.
+* ¿Cuáles son las implicaciones de agregar un nuevo tipo de expresiones? Por ejemplo expresiones de aritmética de punto flotante, lógicas, o relacionales.
 * ¿Cuáles son las implicaciones de agregar un nuevo tipo de interfaz de usuario? Por ejemplo una interfaz gráfica de escritorio, o una interfaz web.
 * ¿Cómo se podría rediseñar el módulo para cumplir con LSP?
 
