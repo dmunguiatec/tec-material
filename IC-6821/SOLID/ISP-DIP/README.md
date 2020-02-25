@@ -1,6 +1,6 @@
 # Evaluador de expresiones
 
-Este es un ejemplo de código que no cumple con el principio de segregación de interfaces (ISP).
+Este es un ejemplo de código que no cumple con el principio de segregación de interfaces (ISP) ni con el principio de inversión de dependencias (DIP).
 
 ## Diseño ##
 
@@ -23,7 +23,7 @@ El programa corre un CLI para hacer evaluación de expresiones aritméticas infi
 > 3 - 6
 -3
 > 1.0 + 3
-Expresión inválida: error de sintaxis
+3.0
 > 1+3
 Expresión inválida: error de sintaxis
 > 2.0 / 3
