@@ -1,11 +1,10 @@
 # Evaluador de expresiones
 
-Este es un ejemplo de código que no cumple con el principio de segregación de interfaces (ISP) ni con el principio de inversión de dependencias (DIP).
+Este es un ejemplo de código diseñado para ejemplificar la aplicación principios SOLID. 
 
 ## Diseño ##
 
-![Diagrama de clase](./SOLID-ISP-DIP.png)
-![Diagrama de secuencia](./SOLID-ISP-seq.png)
+![Diagrama de clase](./SOLID-Final.png)
 
 ## Utilización ##
 
@@ -32,14 +31,6 @@ Expresión inválida: error de sintaxis
 Finalizando el proceso
 ```
 
-## Análisis de ISP ##
+## Análisis final ##
 
-* ¿Puedo invocar `evaluateInt()` y `evaluateFP()` en un mismo objeto de tipo `Expression`?
-* ¿Puedo invocar `create(String, int, int)` y `create(String, double, double)` en un mismo objeto de tipo `ExpressionCreator`? ¿Cuál es la diferencia con el caso anterior?
-* ¿Cómo se podría rediseñar el módulo para cumplir con ISP?
-
-## Análisis de DIP ##
-
-* ¿Cómo evaluaría el nivel de acomplamiento entre el `CLI` y el `ExpressionParser`?
-* ¿Cómo evaluaría el nivel de acomplamiento entre el `ExpressionParser` y el `ExpressionCreator`?
-* ¿Cómo se podría rediseñar el módulo para cumplir con DIP?
+* ¿Cómo podemos incorporar más tipos de expresiones? Ejemplo relacionales y lógicas.
