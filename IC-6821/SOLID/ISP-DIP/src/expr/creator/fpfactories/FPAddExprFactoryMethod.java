@@ -1,11 +1,11 @@
 package expr.creator.fpfactories;
 
-import expr.Expression;
 import expr.fps.FPAddExpression;
+import expr.fps.FPExpression;
 
 public class FPAddExprFactoryMethod implements FPExprFactoryMethod {
     @Override
-    public Expression create(double operandA, double operandB) {
+    public FPExpression create(double operandA, double operandB) {
         return new FPAddExpression(operandA, operandB);
     }
 }

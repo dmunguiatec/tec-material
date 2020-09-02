@@ -1,7 +1,7 @@
 package expr.creator.intfactories;
 
-import expr.Expression;
+import expr.ints.IntExpression;
 
 public interface IntExprFactoryMethod {
-    Expression create(int operandA, int operandB);
+    IntExpression create(int operandA, int operandB);
 }

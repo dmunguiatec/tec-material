@@ -1,9 +1,6 @@
 package expr.fps;
 
-import expr.Expression;
-import expr.ExpressionType;
-
-public class FPDivExpression implements Expression {
+public class FPDivExpression implements FPExpression {
 
     private double operandA, operandB;
 
@@ -13,17 +10,7 @@ public class FPDivExpression implements Expression {
     }
 
     @Override
-    public ExpressionType getType() {
-        return ExpressionType.FP;
-    }
-
-    @Override
-    public int evaluateInt() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public double evaluateFP() {
+    public Double evaluate() {
         return operandA / operandB;
     }
 }

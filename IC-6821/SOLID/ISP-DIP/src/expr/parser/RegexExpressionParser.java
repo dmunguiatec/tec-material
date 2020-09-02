@@ -10,11 +10,14 @@ public class RegexExpressionParser implements ExpressionParser {
     private static final int OPERATOR = 1;
     private static final int OPERAND_B = 2;
 
+    private ExpressionCreator expressionCreator;
+
+    public RegexExpressionParser(ExpressionCreator expressionCreator) {
+        this.expressionCreator = expressionCreator;
+    }
 
     @Override
-    public Expression buildExpression(String expressionLine) {
-        ExpressionCreator expressionCreator = FactoryMethodExpressionCreator.getInstance();
-
+    public Expression<?> buildExpression(String expressionLine) {
         String[] tokens = expressionLine.split("\\s");
         if (hasFPOperands(tokens)) {
             double operandA = Double.parseDouble(tokens[OPERAND_A]);

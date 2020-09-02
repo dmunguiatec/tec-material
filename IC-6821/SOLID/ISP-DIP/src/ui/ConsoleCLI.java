@@ -1,7 +1,6 @@
 package ui;
 
 import expr.Expression;
-import expr.ExpressionType;
 import expr.parser.ExpressionParser;
 import expr.parser.RegexExpressionParser;
 
@@ -9,9 +8,15 @@ import java.util.Optional;
 import java.util.Scanner;
 
 public class ConsoleCLI implements CLI {
+
+    private ExpressionParser expressionParser;
+
+    public ConsoleCLI(ExpressionParser expressionParser) {
+        this.expressionParser = expressionParser;
+    }
+
     @Override
     public void repl() {
-        ExpressionParser expressionParser = new RegexExpressionParser();
         Scanner scanner = new Scanner(System.in);
 
         boolean done = false;
@@ -24,19 +29,9 @@ public class ConsoleCLI implements CLI {
             } else if (!expressionParser.validate(line)) {
                 System.out.println("Expresión inválida: error de sintaxis");
             } else {
-                Expression expression = expressionParser.buildExpression(line);
-
-                Optional result = Optional.empty();
-                switch (expression.getType()) {
-                    case INT: result = Optional.of(expression.evaluateInt()); break;
-                    case FP: result = Optional.of(expression.evaluateFP()); break;
-                }
-
-                if (result.isPresent()) {
-                    System.out.println(result.get());
-                } else {
-                    System.out.println("Expresión inválida: tipo desconocido");
-                }
+                Expression<?> expression = expressionParser.buildExpression(line);
+                Object value = expression.evaluate();
+                System.out.println(value);
             }
         }
     }

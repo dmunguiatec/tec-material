@@ -1,9 +1,6 @@
 package expr.ints;
 
-import expr.Expression;
-import expr.ExpressionType;
-
-public class MulExpression implements Expression {
+public class MulExpression implements IntExpression {
 
     private int operandA, operandB;
 
@@ -13,17 +10,7 @@ public class MulExpression implements Expression {
     }
 
     @Override
-    public ExpressionType getType() {
-        return ExpressionType.INT;
-    }
-
-    @Override
-    public int evaluateInt() {
+    public Integer evaluate() {
         return operandA * operandB;
-    }
-
-    @Override
-    public double evaluateFP() {
-        throw new UnsupportedOperationException();
     }
 }

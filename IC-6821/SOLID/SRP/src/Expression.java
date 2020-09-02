@@ -1,7 +1,6 @@
+import java.util.Optional;
+
 public class Expression {
-    enum Operation {
-        ADD, SUB, MUL, NOOP
-    }
 
     private Operation operation;
     private Integer operandA;
@@ -13,15 +12,17 @@ public class Expression {
         this.operandB = operandB;
     }
 
-    public Operation getOperation() {
-        return operation;
-    }
+    public Optional<Integer> evaluate() {
+        Optional<Integer> result = Optional.empty();
 
-    public Integer getOperandA() {
-        return operandA;
-    }
+        if (Operation.ADD.equals(this.operation)) {
+            result = Optional.of(operandA + operandB);
+        } else if (Operation.SUB.equals(this.operation)) {
+            result = Optional.of(operandA - operandB);
+        } else if (Operation.MUL.equals(this.operation)) {
+            result = Optional.of(operandA * operandB);
+        }
 
-    public Integer getOperandB() {
-        return operandB;
+        return result;
     }
 }

@@ -1,8 +1,9 @@
 package expr.creator;
 
-import expr.Expression;
 import expr.creator.fpfactories.FPExprFactoryMethod;
 import expr.creator.intfactories.IntExprFactoryMethod;
+import expr.fps.FPExpression;
+import expr.ints.IntExpression;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class FactoryMethodExpressionCreator implements ExpressionCreator {
     }
 
     @Override
-    public Expression create(String operator, int operandA, int operandB) {
+    public IntExpression create(String operator, int operandA, int operandB) {
         IntExprFactoryMethod factoryMethod = intFactories.get(operator);
         if (factoryMethod == null) {
             throw new IllegalArgumentException("Unknown operator " + operator);
@@ -33,7 +34,7 @@ public class FactoryMethodExpressionCreator implements ExpressionCreator {
     }
 
     @Override
-    public Expression create(String operator, double operandA, double operandB) {
+    public FPExpression create(String operator, double operandA, double operandB) {
         FPExprFactoryMethod factoryMethod = fpFactories.get(operator);
         if (factoryMethod == null) {
             throw new IllegalArgumentException("Unknown operator " + operator);

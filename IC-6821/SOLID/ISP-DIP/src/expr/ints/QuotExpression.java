@@ -1,9 +1,6 @@
 package expr.ints;
 
-import expr.Expression;
-import expr.ExpressionType;
-
-public class QuotExpression implements Expression {
+public class QuotExpression implements IntExpression {
 
     private int operandA, operandB;
 
@@ -13,17 +10,7 @@ public class QuotExpression implements Expression {
     }
 
     @Override
-    public ExpressionType getType() {
-        return ExpressionType.INT;
-    }
-
-    @Override
-    public int evaluateInt() {
+    public Integer evaluate() {
         return operandA / operandB;
-    }
-
-    @Override
-    public double evaluateFP() {
-        throw new UnsupportedOperationException();
     }
 }

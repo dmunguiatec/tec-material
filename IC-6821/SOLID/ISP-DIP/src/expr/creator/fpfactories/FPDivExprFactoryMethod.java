@@ -1,11 +1,11 @@
 package expr.creator.fpfactories;
 
-import expr.Expression;
 import expr.fps.FPDivExpression;
+import expr.fps.FPExpression;
 
 public class FPDivExprFactoryMethod implements FPExprFactoryMethod {
     @Override
-    public Expression create(double operandA, double operandB) {
+    public FPExpression create(double operandA, double operandB) {
         return new FPDivExpression(operandA, operandB);
     }
 }

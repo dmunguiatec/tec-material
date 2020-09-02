@@ -1,7 +1,7 @@
 package expr.creator.fpfactories;
 
-import expr.Expression;
+import expr.fps.FPExpression;
 
 public interface FPExprFactoryMethod {
-    Expression create(double operandA, double operandB);
+    FPExpression create(double operandA, double operandB);
 }

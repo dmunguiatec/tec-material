@@ -1,10 +1,10 @@
 # Evaluador de expresiones
 
-Este es un ejemplo de código que no cumple con el principio de responsabilidad única (SRP).
+Este es un ejemplo de código que no cumple con el principio abierto/cerrado (OCP) ni con el principio de sustitución de Liskov (LSP).
 
 ## Diseño ##
 
-![Diagrama de clase](./SOLID-SRP.png)
+![Diagrama de clase](./SOLID-OCP-LSP.png)
 
 ## Utilización ##
 
@@ -21,12 +21,22 @@ El programa corre un CLI para hacer evaluación de expresiones aritméticas infi
 -2
 > 3 - 6
 -3
-> exit
-Finishing process
+> 1.0 + 3
+Expresión inválida: error de sintaxis
+> 1+3
+Expresión inválida: error de sintaxis
+> salir
+Finalizando el proceso
 ```
 
-## Análisis de SRP ##
+## Análisis de OCP ##
 
-* ¿Cómo se podría evaluar la cohesión de este módulo?
-* ¿Cuáles son las distintas responsabilidades que cumple este módulo?
-* ¿Cómo se podría rediseñar el módulo para cumplir con SRP?
+* ¿Cuáles son las implicaciones de agregar un nuevo operador? Por ejemplo el operador para calcular el cociente de la división entera `/ `.
+* ¿Cómo se podría rediseñar el módulo para cumplir con OCP?
+
+## Análisis de LSP ##
+
+* ¿Cuáles son las implicaciones de agregar un nuevo tipo de expresiones? Por ejemplo expresiones de aritmética de punto flotante.
+* ¿Cuáles son las implicaciones de agregar un nuevo tipo de interfaz de usuario? Por ejemplo una interfaz gráfica de escritorio, o una interfaz web.
+* ¿Cómo se podría rediseñar el módulo para cumplir con LSP?
+
