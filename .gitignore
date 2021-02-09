@@ -20,3 +20,5 @@ data/.DS_Store
 *~
 **/.cabal*
 *.class
+**/*.pyc
+**/venv/

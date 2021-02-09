@@ -19,7 +19,7 @@ def contar_conc():
 
     return c.value
 
-print(contar_conc())
+#print(contar_conc())
 
 def contar_sync(c, n, lock):
     for i in range(n):
