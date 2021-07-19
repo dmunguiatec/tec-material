@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+  api:
+    image: openjdk:11
+    container_name: app
+    depends_on:
+      - db
+    links:
+      - 'db:db'
+    ports:
+      - '0.0.0.0:8080:8080'
+    user: "$DOCKER_COMPOSE_RUN_AS_USER"
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ./gradlew clean build -x test bootRun
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/notes
+      - SPRING_DATASOURCE_USERNAME=notes
+      - SPRING_DATASOURCE_PASSWORD=notes
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: postgres:12
+    container_name: db
+    ports:
+      - '0.0.0.0:5432:5432'
+    volumes:
+      - notes-pg-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=notes
+      - POSTGRES_PASSWORD=notes
+
+volumes:
+  notes-pg-data:
+    external: false

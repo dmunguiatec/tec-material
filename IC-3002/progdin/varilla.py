@@ -43,3 +43,31 @@ def varilla_abajo_arriba(tam_varilla, valores):
 
 max_valor = varilla_abajo_arriba(8, valores=[0, 1, 5, 8, 9, 10, 17, 17, 20])
 print(max_valor)
+
+
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fact(n-1)
+
+
+def fact(n):
+    return fact_aux(n, acum=1)
+
+
+def fact_aux(n, acum):
+    if n == 0:
+        return acum
+    else:
+        return fact_aux(n - 1, acum * n)
+
+
+def fact_iter(n):
+    acum = 1
+    while n > 0:
+        acum = acum * n
+        n = n - 1
+
+    return acum
+
