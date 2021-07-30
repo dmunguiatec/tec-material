@@ -103,7 +103,15 @@ test {
 ```
 
 - Demostrar la función de las pruebas haciendo que fallen modificando el código.
+- 
 - Introducir lombok y verificar que tests siguen corriendo
 
+```id 'io.freefair.lombok' version '6.0.0-m2'```
 
+- Checkstyle `demo/config/checkstyle/checkstyle.xml`
+
+```
+id 'checkstyle'
+checkstyleTest.enabled = false
+```
 
