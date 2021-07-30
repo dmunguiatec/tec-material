@@ -25,6 +25,10 @@ docker build -t ic6821-devenv .
 
 Abrir contenedor volátil en una terminal y correr la imagen en otra terminal.
 
+```
+docker run -it ic6821-devenv /bin/bash
+```
+
 Abrir el website de sdkman e instalar en el contenedor volátil
 
 ```
