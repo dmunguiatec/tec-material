@@ -1,0 +1,18 @@
+@startuml
+
+title CaesarCipher.decrypt(message, key)
+
+start
+
+:offset = key.get();
+
+repeat
+    :currentChar = next char from message;
+    :newChar = currentChar - offset;
+    :append newChar to output;
+repeat while (message has more chars?) is (yes)
+
+:return output;
+stop
+
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+
+autoactivate on
+
+actor User
+boundary CipherTool as app
+
+User -> app :""__main__""
+app -> CipherFactory :""__getInstance__("caesar")""
+    create CaesarCipher as cipher
+    CipherFactory -> cipher :«new»
+        return cipher
+    return cipher
+
+    create CaesarKey as key
+    app -> key :«new»
+        return key
+
+    app -> cipher :encrypt(message, key)
+        cipher -> key :get()
+            return key
+        return encrypted
+
+    app -> cipher :decrypt(encrypted, key)
+        cipher -> key :get()
+            return key
+        return decrypted
+
+@enduml

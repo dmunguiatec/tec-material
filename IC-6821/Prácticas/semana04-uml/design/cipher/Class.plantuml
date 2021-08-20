@@ -1,0 +1,37 @@
+@startuml
+
+interface Cipher<K extends Key> {
+    encrypt(message: String, key: K): String
+    decrypt(encryptedMessage: String, key: K): String
+}
+
+interface Key<T> {
+    get(): T
+}
+
+class CaesarKey {
+    - key: Integer
+    + CaesarKey(key: Integer)
+}
+
+Key <|.. CaesarKey :<<bind>>\nT:Integer
+Cipher ..> Key
+
+class CaesarCipher
+Cipher <|.. CaesarCipher :<<bind>>\nK:CaesarKey
+
+class CipherFactory {
+    + {static} getInstance(algorithm: String): Cipher
+}
+
+CipherFactory ..> CaesarCipher
+
+class CipherTool {
+    + {static} main(:String[])
+}
+
+CipherTool ..> Cipher
+CipherTool ..> Key
+CipherTool ..> CipherFactory
+
+@enduml
