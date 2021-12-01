@@ -1,0 +1,100 @@
+@startuml
+
+title Respetando OCP
+
+package expr {
+
+    class ExpressionEvaluator {
+        + {static} main(String[]): void
+    }
+
+    package repl {
+
+        interface REPL {
+            loop(): void
+        }
+
+        class ConsoleREPL {
+        }
+
+        REPL <|.. ConsoleREPL
+        ExpressionEvaluator ..> REPL
+    }
+
+    package parser {
+        interface ExpressionParser {
+            + parse(:String): Optional<Expression>
+        }
+
+        class DefaultExpressionParser {
+        }
+
+        ConsoleREPL ..> ExpressionParser
+        ExpressionParser <|.. DefaultExpressionParser
+    }
+
+    package expression {
+
+        interface ExpressionFactory {
+            + create(op:String, operandA:Integer, operandB:Integer): Optional<Expression>
+        }
+
+        class DefaultExpressionFactory {
+            - factories:Map<String, ExpressionFactory>
+        }
+
+        class AddExpressionFactory {
+        }
+
+        class SubExpressionFactory {
+        }
+
+        class MulExpressionFactory {
+        }
+
+        ExpressionFactory <|.. DefaultExpressionFactory
+        ExpressionFactory <|.. AddExpressionFactory
+        ExpressionFactory <|.. SubExpressionFactory
+        ExpressionFactory <|.. MulExpressionFactory
+
+        AddExpressionFactory ..> AddExpression
+        SubExpressionFactory ..> SubExpression
+        MulExpressionFactory ..> MulExpression
+
+        AddExpression ..|> Expression
+        SubExpression ..|> Expression
+        MulExpression ..|> Expression
+
+        interface Expression {
+            + eval(): Integer
+        }
+
+        DefaultExpressionFactory ..> Expression
+
+        class AddExpression {
+            - operandA: Integer
+            - operandB: Integer
+            - operator: String
+            + AddExpression(:String, :Integer, :Integer)
+        }
+
+        class SubExpression {
+            - operandA: Integer
+            - operandB: Integer
+            - operator: String
+            + SubExpression(:String, :Integer, :Integer)
+        }
+
+        class MulExpression {
+            - operandA: Integer
+            - operandB: Integer
+            - operator: String
+            + MulExpression(:String, :Integer, :Integer)
+        }
+
+        DefaultExpressionParser .left.> Expression
+        DefaultExpressionParser .left.> ExpressionFactory
+    }
+}
+
+@enduml

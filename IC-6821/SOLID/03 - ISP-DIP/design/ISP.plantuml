@@ -1,0 +1,190 @@
+@startuml
+
+title Respetando ISP
+
+package expr {
+
+    class ExpressionEvaluator {
+        + {static} main(String[]): void
+    }
+
+    package repl {
+
+        interface REPL {
+            loop(): void
+        }
+
+        class ConsoleREPL {
+        }
+
+        REPL <|.. ConsoleREPL
+        ExpressionEvaluator ..> REPL
+    }
+
+    package parser {
+        interface ExpressionParser {
+            + parse(:String): Optional<Expression>
+        }
+
+        class DefaultExpressionParser {
+        }
+
+        ConsoleREPL ..> ExpressionParser
+        ExpressionParser <|.. DefaultExpressionParser
+    }
+
+    package expression {
+
+        interface ExpressionFactory {
+            + create(op:String, operandA:Integer, operandB:Integer): Expression
+            + create(op:String, operandA:Double, operandB:Double): Expression
+        }
+
+        class DefaultExpressionFactory {
+            - {static} intFactories:Map<String, IntExpressionFactory>
+            - {static} fpFactories:Map<String, FPExpressionFactory>
+
+            + {static} registerFPFactory(op:String, :IntExpressionFactory): void
+            + {static} registerIntFactory(op:String, :FPExpressionFactory): void
+        }
+
+        interface Expression<T> {
+            + eval(): T
+        }
+
+        package ints {
+
+            interface IntExpressionFactory {
+                + create(op:String, operandA:Integer, operandB:Integer): IntExpression
+            }
+
+            class AddExpressionFactory {
+            }
+
+            class SubExpressionFactory {
+            }
+
+            class MulExpressionFactory {
+            }
+
+            class QuotExpressionFactory {
+            }
+
+            ExpressionFactory <|.. DefaultExpressionFactory
+
+            IntExpressionFactory <|.. AddExpressionFactory
+            IntExpressionFactory <|.. SubExpressionFactory
+            IntExpressionFactory <|.. MulExpressionFactory
+            IntExpressionFactory <|.. QuotExpressionFactory
+
+            AddExpressionFactory ..> AddExpression
+            SubExpressionFactory ..> SubExpression
+            MulExpressionFactory ..> MulExpression
+            QuotExpressionFactory ..> QuotExpression
+
+            AddExpression ..|> Expression :<<bind>>\nT:Integer
+            SubExpression ..|> Expression :<<bind>>\nT:Integer
+            MulExpression ..|> Expression :<<bind>>\nT:Integer
+            QuotExpression ..|> Expression :<<bind>>\nT:Integer
+        }
+
+        package fps {
+            interface FPExpressionFactory {
+                + create(op:String, operandA:Double, operandB:Double): FPExpression
+            }
+
+            class FPAddExpressionFactory {
+            }
+
+            class FPSubExpressionFactory {
+            }
+
+            class FPMulExpressionFactory {
+            }
+
+            class FPDivExpressionFactory {
+            }
+
+            FPExpressionFactory <|.. FPAddExpressionFactory
+            FPExpressionFactory <|.. FPSubExpressionFactory
+            FPExpressionFactory <|.. FPMulExpressionFactory
+            FPExpressionFactory <|.. FPDivExpressionFactory
+
+            FPAddExpressionFactory ..> FPAddExpression
+            FPSubExpressionFactory ..> FPSubExpression
+            FPMulExpressionFactory ..> FPMulExpression
+            FPDivExpressionFactory ..> FPDivExpression
+
+            FPAddExpression ..|> Expression :<<bind>>\nT:Double
+            FPSubExpression ..|> Expression :<<bind>>\nT:Double
+            FPMulExpression ..|> Expression :<<bind>>\nT:Double
+            FPDivExpression ..|> Expression :<<bind>>\nT:Double
+        }
+
+        DefaultExpressionFactory ..> Expression
+
+        class AddExpression {
+            - operandA: Integer
+            - operandB: Integer
+            - operator: String
+            + AddExpression(:String, :Integer, :Integer)
+        }
+
+        class SubExpression {
+            - operandA: Integer
+            - operandB: Integer
+            - operator: String
+            + SubExpression(:String, :Integer, :Integer)
+        }
+
+        class MulExpression {
+            - operandA: Integer
+            - operandB: Integer
+            - operator: String
+            + MulExpression(:String, :Integer, :Integer)
+        }
+        class QuotExpression {
+            - operandA: Integer
+            - operandB: Integer
+            - operator: String
+            + QuotExpression(:String, :Integer, :Integer)
+        }
+
+        class FPAddExpression {
+            - operandA: Double
+            - operandB: Double
+            - operator: String
+            + AddExpression(:String, :Double, :Double)
+        }
+
+        class FPSubExpression {
+            - operandA: Double
+            - operandB: Double
+            - operator: String
+            + SubExpression(:String, :Double, :Double)
+        }
+
+        class FPMulExpression {
+            - operandA: Double
+            - operandB: Double
+            - operator: String
+            + MulExpression(:String, :Double, :Double)
+        }
+        class FPDivExpression {
+            - operandA: Double
+            - operandB: Double
+            - operator: String
+            + QuotExpression(:String, :Double, :Double)
+        }
+
+        DefaultExpressionParser ..> Expression
+        DefaultExpressionParser ..> ExpressionFactory
+
+        DefaultExpressionFactory ..> IntExpressionFactory
+        DefaultExpressionFactory ..> FPExpressionFactory
+
+    }
+
+}
+
+@enduml

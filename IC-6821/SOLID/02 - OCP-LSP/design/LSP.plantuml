@@ -1,0 +1,60 @@
+@startuml
+
+title Respetando LSP
+
+package expr {
+
+    class ExpressionEvaluator {
+        + {static} main(String[]): void
+    }
+
+    package repl {
+
+        interface REPL {
+            loop(): void
+        }
+
+        class ConsoleREPL {
+        }
+
+        REPL <|.. ConsoleREPL
+        ExpressionEvaluator ..> REPL
+    }
+
+    package parser {
+        interface ExpressionParser {
+            + parse(String): Optional<Expression>
+        }
+
+        class DefaultExpressionParser {
+        }
+
+        ConsoleREPL ..> ExpressionParser
+        ExpressionParser <|.. DefaultExpressionParser
+    }
+
+    package expression {
+        interface Expression {
+            + eval(): Integer
+        }
+
+        class DefaultExpression {
+            - operandA: Integer
+            - operandB: Integer
+            + Expression(Integer, Integer, Operation)
+        }
+
+        enum Operation {
+            + ADD
+            + SUB
+            + MUL
+        }
+
+        Expression <|.. DefaultExpression
+        DefaultExpression -right-> Operation : operation
+        ConsoleREPL ..> Expression
+        DefaultExpressionParser .left.> Expression
+    }
+}
+
+@enduml

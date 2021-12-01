@@ -1,0 +1,30 @@
+@startuml
+
+title Antes
+
+package expr {
+
+    class ExpressionEvaluator {
+        + {static} main(String[]): void
+        - parse(String): Expression
+    }
+
+    class Expression {
+        - operation: Operation
+        - operandA: Integer
+        - operandB: Integer
+    }
+
+    enum Operation {
+        ADD
+        SUB
+        MUL
+        NOOP
+    }
+
+    ExpressionEvaluator ..> Expression
+    Expression --+ Operation
+    ExpressionEvaluator ..> Operation
+}
+
+@enduml

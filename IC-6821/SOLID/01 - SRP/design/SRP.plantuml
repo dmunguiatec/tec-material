@@ -1,0 +1,50 @@
+@startuml
+
+title Respetando SRP
+
+package expr {
+
+    class ExpressionEvaluator {
+        + {static} main(String[]): void
+    }
+
+    package repl {
+        class ConsoleREPL {
+            loop(): void
+        }
+
+        ExpressionEvaluator ..> ConsoleREPL
+    }
+
+    package parser {
+        class ExpressionParser {
+            + parse(String): Optional<Expression>
+        }
+
+        ConsoleREPL ..> ExpressionParser
+    }
+
+    package expression {
+        class Expression {
+            - operandA: Integer
+            - operandB: Integer
+            + Expression(Integer, Integer, Operation)
+            + eval(): Integer
+        }
+
+        enum Operation {
+            + ADD
+            + SUB
+            + MUL
+        }
+
+        Expression --> Operation
+        ConsoleREPL ..> Expression
+    }
+
+    ExpressionParser ..> Expression
+
+
+}
+
+@enduml
