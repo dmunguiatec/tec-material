@@ -30,7 +30,7 @@ public class ExpressionEvaluator {
                 if (result.isPresent()) {
                     System.out.println(result.get());
                 } else {
-                    System.out.println("Unexpected error");
+                    System.out.println("Unrecognized operator");
                 }
             }
         }

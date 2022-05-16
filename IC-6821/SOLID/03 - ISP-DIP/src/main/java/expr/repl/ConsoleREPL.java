@@ -12,8 +12,8 @@ public class ConsoleREPL implements REPL {
 
     private ExpressionParser expressionParser;
 
-    public ConsoleREPL() {
-        this.expressionParser = new DefaultExpressionParser();
+    public ConsoleREPL(final ExpressionParser expressionParser) {
+        this.expressionParser = expressionParser;
     }
 
     @Override
