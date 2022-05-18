@@ -3,9 +3,9 @@
  */
 package edu.tec.ic6821.jdbc;
 
-import edu.tec.ic6821.jdbc.model.PGUserDao;
+import edu.tec.ic6821.jdbc.users.PGUserDao;
 import edu.tec.ic6821.jdbc.model.User;
-import edu.tec.ic6821.jdbc.model.UserDao;
+import edu.tec.ic6821.jdbc.users.UserDao;
 
 import java.util.List;
 import java.util.Optional;

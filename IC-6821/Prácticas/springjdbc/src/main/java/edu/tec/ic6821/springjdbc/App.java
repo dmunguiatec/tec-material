@@ -1,7 +1,7 @@
 package edu.tec.ic6821.springjdbc;
 
 import edu.tec.ic6821.springjdbc.model.User;
-import edu.tec.ic6821.springjdbc.model.UserRepository;
+import edu.tec.ic6821.springjdbc.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
