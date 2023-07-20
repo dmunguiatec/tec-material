@@ -63,7 +63,7 @@ Para abstraer este juego no nos interesa el material de los naipes, ni sus dimen
 
 Una vez determinadas las características relevantes para el problema, podemos proceder a definir la forma en que se presentarán los objetos involucrados. Podemos representar un naipe como una tupla que contiene el valor de la carta y el símbolo del palo al que pertenece, y podemos representar una mano como un conjunto de naipes -- es decir de tuplas `(valor, símbolo)`.
 
-A la hora de expresar el problema, podemos utilizar prosa para explicar los detalles, restricciones y formas de las entradas y salidas. Opcionalmente podemos hacer uso del lenguaje de la lógica, el cual permite que las expresiones sean breves, concisas y precisas.
+Al expresar el problema podemos utilizar prosa para explicar los detalles, restricciones y formas de las entradas y salidas. Opcionalmente podemos hacer uso del lenguaje de la lógica, el cual permite que las expresiones sean breves, concisas y precisas.
 
 Utilizando lógica, podemos definir una baraja como el producto cartesiano entre el conjunto de valores y el conjunto de símbolos.
 
@@ -88,11 +88,39 @@ Algoritmo
 
 El algoritmo especifica cómo se transforman las entradas en salidas. La transformación sucede a través de una secuencia discreta de pasos de un estado a otro. Esta secuencia puede ser explícita o tácita.
 
-Más allá de esta idea, no hay un consenso sobre una definición exhaustiva del concepto de algoritmo. A pesar de esto, es posible enumerar una serie de características deseables en un algoritmo:
+Más allá de esta idea, no hay un consenso sobre una definición exhaustiva del concepto de algoritmo. A pesar de esto, es posible enumerar una serie de características deseables en un algoritmo.
 
 * Desde una perspectiva teórica, el algoritmo debe ser *correcto* o *eficaz*, es decir debe resolver el problema general.
 
 * Desde una perspectiva práctica, el algoritmo debe ser *eficiente*, es decir debe llegar a una solución utilizando la menor cantidad de recursos posibles.
+
+El modelo de cinco características de Donald Knuth aporta más detalle a nuestro entendimiento de qué es un algoritmo.
+
+* *Finitud*: Un algoritmo siempre debe finalizar después de haber realizado un número finito de pasos. Un procedimiento de cumpla con todas las características de un algoritmo excepto por esta puede ser más bien llamado *método computacional*.
+
+* *Definición*: Los pasos del algoritmo deben estar especificados de manera rigurosa y sin ambigüedad para cada caso posible. Los lenguajes de programación están diseñados como herramientas para expresar algoritmos garantizando esta característica.
+
+* *Entradas*: Un algoritmo debe tener cero o más entradas tomadas desde conjuntos de objetos especificados.
+
+* *Salidas*: Un algoritmo tiene una o más salidas relacionadas específicamente con las entradas dadas. Como en el caso de los procedimientos computacionales que no finalizan, podemos llamar *métodos computacionales* a los procedimientos computacionales que no tienen salidas.
+
+* *Efectividad*: Los pasos del algoritmo deben ser suficientemente básicos tal que puedan ser realizados exactamente y en tiempo finito, al menos en principio, por alguien utilizando papel y lápiz. De esta forma por ejemplo no hay un procedimiento efectivo para calcular los dígitos de $\pi$ pues este sería infinito, y por tanto tampoco podríamos escribir un algoritmo utilizando una instrucción que indique "si el número de dígitos de $\pi$ es par retorne verdadero, sino retorne falso" pues esta no sería efectiva.
+
+## Eficiencia ##
+
+Al considerar la eficiencia de los algoritmos entramos en el campo de la ingeniería y la aplicación práctica y por tanto debemos considerar la posibilidad de ejecutar los algoritmos en máquinas físicas.
+
+Los algoritmos consumen recursos de las máquinas que los ejecutan, principalmente *ciclos de procesador* y *memoria*, pero también almacenamiento persistente, interfaces de red, memorias caché y GPUs, entre otros.
+
+Los algoritmos eficientes minimizan sus requerimientos de recursos.
+
+Los principales aspectos de eficiencia a considerar en un algoritmo son *tiempo* y *espacio* correspondientes a CPU y memoria respectivamente.
+
+La experiencia nos muestra que es común incrementar el consumo de memoria cuando se trata de minimizar el tiempo de ejecución de un algoritmo; respectivamente al minimizar el consumo de memoria es común requerir de más ciclos de procesador. Esta observación no es una regla invariable pero si un patrón que podemos observar frecuentemente.
+
+En los siguientes capítulos se presentarán algunas herramientas lógicas y matemáticas que nos permitirán razonar formal y sistemáticamente sobre el consumo de recursos en los algoritmos.
+
+Esto nos permitirá hacer observaciones y análisis sobre el diseño de algoritmos y conocer sobre los límites del campo de la computación.
 
 ### Ejercicios ###
 
@@ -122,26 +150,12 @@ Formalice como problema computacional los siguientes problemas:
 
 12. Buscar todos los registros en una colección que calcen con un criterio dado. Por ejemplo encontrar todas las personas de una colección cuyo primer nombre sea "María".
 
-## Eficiencia ##
-
-Al considerar la eficiencia de los algoritmos entramos en el campo de la ingeniería y la aplicación práctica y por tanto debemos considerar la posibilidad de ejecutar los algoritmos en máquinas físicas.
-
-Los algoritmos consumen recursos de las máquinas que los ejecutan, principalmente *ciclos de procesador* y *memoria*, pero también almacenamiento persistente, interfaces de red, memorias caché y GPUs, entre otros.
-
-Los algoritmos eficientes minimizan sus requerimientos de recursos. 
-
-Los principales aspectos de eficiencia a considerar en un algoritmo son *tiempo* y *espacio* correspondientes a CPU y memoria respectivamente.
-
-La experiencia nos muestra que es común incrementar el consumo de memoria cuando se trata de minimizar el tiempo de ejecución de un algoritmo; respectivamente al minimizar el consumo de memoria es común requerir de más ciclos de procesador. Esta observación no es una regla invariable pero si un patrón que podemos observar frecuentemente.
-
-En los siguientes capítulos se presentarán algunas herramientas lógicas y matemáticas que nos permitirán razonar formal y sistemáticamente sobre el consumo de recursos en los algoritmos. 
-
-Esto nos permitirá hacer observaciones y análisis sobre el diseño de algoritmos y conocer sobre los límites del campo de la computación.
-
-## Referencias
+## Referencias ##
 
 Centro de Informática UCR (s.f.) 35 aniversario Centro de Informática Universidad de Costa Rica. Disponible en: https://ci.ucr.ac.cr/sites/default/files/informaciondigital/revistaci2baja.pdf
 
 Knuth, D. (1974) Computer Programming as an Art. Communications of the ACM, Vol. 17, No. 12.
 
-Knuth, D. (1974) Structured Programming with go to statements. Computing Surveys, Vol. 6, No. 4
+Knuth, D. (1974) Structured Programming with go to statements. Computing Surveys, Vol. 6, No. 4.
+
+Knuth, D. (1997) The Art of Computer Programming, Volume 1 Fundamental Algorithms, 3rd ed. Addison-Wesley.

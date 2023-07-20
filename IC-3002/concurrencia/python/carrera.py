@@ -7,7 +7,6 @@ def contar(c, n):
 def contar_conc():
     c = Value('i', 0)
     n = 10000
-    l = Lock()
     p1 = Process(target=contar, args=(c, n))
     p2 = Process(target=contar, args=(c, n))
 
@@ -19,7 +18,7 @@ def contar_conc():
 
     return c.value
 
-#print(contar_conc())
+print(contar_conc())
 
 def contar_sync(c, n, lock):
     for i in range(n):

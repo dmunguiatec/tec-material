@@ -9,13 +9,11 @@ def es_primo_secuencial(n):
             return False
     return True
 
-'''
 start = timer()
 print(f'¿es primo 433494437? {es_primo_secuencial(433494437)}') # 1073676287
 end = timer()
 print(f'Secuencial: {end - start} seg')
-'''
-   
+
 def es_primo_concurrente_memc(n):
     
     def tarea(n, inicio, fin, res):
