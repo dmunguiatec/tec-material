@@ -3,12 +3,31 @@
  */
 package edu.tec.ic6821;
 
+import edu.tec.ic6821.users.CSVUserDataSource;
+import edu.tec.ic6821.users.User;
+import edu.tec.ic6821.users.UserDataSource;
+
+import java.io.File;
+import java.util.List;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public static void main(String[] args) {
+        try {
+            final App app = new App();
+            app.loadUsers();
+        } catch (Exception e) {
+            System.err.printf("[App] Error inesperado %s", e.getMessage());
+        }
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    private void loadUsers() {
+        try {
+            final File usersCsv = new File(getClass().getResource("/users.csv").toURI());
+            final UserDataSource userDataSource = new CSVUserDataSource(usersCsv);
+            final List<User> users = userDataSource.fetch();
+            System.out.printf("Se han cargado %d usuarios en memoria desde %s", users.size(), usersCsv.getPath());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
