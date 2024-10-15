@@ -9,11 +9,3 @@ CREATE TABLE posts (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TRIGGER posts_set_audit_fields
-BEFORE INSERT ON posts
-REFERENCING NEW ROW AS newrow FOR EACH ROW
-BEGIN ATOMIC
-    SET newrow.ext_id = UUID();
-    SET newrow.created_on = NOW();
-    SET newrow.last_updated_on = NOW();
-END;

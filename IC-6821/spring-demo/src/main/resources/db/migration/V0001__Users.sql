@@ -9,11 +9,3 @@ CREATE TABLE users (
     last_updated_on TIMESTAMP DEFAULT NOW
 );
 
-CREATE TRIGGER users_set_audit_fields
-BEFORE INSERT ON users
-REFERENCING NEW ROW AS newrow FOR EACH ROW
-BEGIN ATOMIC
-    SET newrow.ext_id = UUID();
-    SET newrow.created_on = NOW();
-    SET newrow.last_updated_on = NOW();
-END;

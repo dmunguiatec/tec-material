@@ -1,5 +1,6 @@
 package edu.ic6821.blog.auth;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ public class AuthController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
+    @Operation(summary = "Login")
     public AuthDTO login(@RequestBody CredentialsDTO credentials) {
         logger.info(String.format("[login] Authenticating %s", credentials.username()));
         try {

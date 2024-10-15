@@ -1,6 +1,8 @@
 package edu.ic6821.blog.posts;
 
 import edu.ic6821.blog.posts.model.Post;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,8 @@ public class PostController {
     private PostService postService;
 
     @PostMapping
+    @Operation(summary = "Create new post")
+    @SecurityRequirement(name = "Bearer Authentication")
     public PostIdDTO create(@RequestBody PostContentDTO postDTO, @PathVariable String userExtId) {
         logger.info(String.format("[%s.create] Creating new post %s for user %s",
                 this.getClass(), postDTO.title(), userExtId));
@@ -44,7 +48,9 @@ public class PostController {
     }
 
     @GetMapping("/{postExtId}")
-    public PostDetailDTO get(@PathVariable String postExtId) {
+    @Operation(summary = "Get post content")
+    @SecurityRequirement(name = "Bearer Authentication")
+    public PostDetailDTO get(@PathVariable String userExtId, @PathVariable String postExtId) {
         logger.info(String.format("[%s.get] Retrieving post %s",
                 this.getClass(), postExtId));
 
@@ -64,6 +70,8 @@ public class PostController {
 
 
     @GetMapping
+    @Operation(summary = "List all posts by user")
+    @SecurityRequirement(name = "Bearer Authentication")
     public List<PostHeaderDTO> list(@PathVariable String userExtId) {
         logger.info(String.format("[%s.get] Retrieving posts for user %s",
                 this.getClass(), userExtId));
