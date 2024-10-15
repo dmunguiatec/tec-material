@@ -10,3 +10,9 @@ Para correr las pruebas
 ./gradlew clean test
 ```
 
+Documentación del API
+
+```html
+http://localhost:8080/swagger-ui/index.html
+```
+
