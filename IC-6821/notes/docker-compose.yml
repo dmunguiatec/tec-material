@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   api:
-    image: openjdk:11
+    image: eclipse-temurin:21
     container_name: app
     depends_on:
       - db
@@ -22,7 +22,7 @@ services:
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   db:
-    image: postgres:12
+    image: postgres:17
     container_name: db
     ports:
       - '0.0.0.0:5432:5432'
