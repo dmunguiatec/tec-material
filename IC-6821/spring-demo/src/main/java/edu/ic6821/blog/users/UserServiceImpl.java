@@ -25,7 +25,6 @@ public class UserServiceImpl implements UserService {
 
         final User user = new User(username, this.encoder.hash(password), name, email);
         User userWithId = userRepository.save(user);
-        System.out.println("userWithId = " + userWithId);
 
         return userRepository.findById(userWithId.getId());
     }

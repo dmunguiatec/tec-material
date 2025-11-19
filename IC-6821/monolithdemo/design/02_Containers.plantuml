@@ -1,0 +1,17 @@
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title [Containers] Blog App
+
+Person(customer, "Customer", "Owner of a bank account")
+Person(officer, "Officer", "A bank service representative")
+
+System_Boundary(bankapp, "Banking App") {
+    Container(monolith, "Monolith", "Java 21, SpringBoot 3.5", "Server-side rendered web app for savings account management")
+    ContainerDb(db, "Relational Database", "PostgreSQL", "Stores savings account data")
+}
+
+Rel(customer, monolith, "Uses")
+Rel(officer, monolith, "Uses")
+Rel(monolith, db, "Reads from and writes to", "JDBC")
+@enduml

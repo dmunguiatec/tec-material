@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Transferencias Bancarias</title>
+</head>
+<body>
+
+<h2>Hacer una Transferencia</h2>
+
+<form th:action="@{/transfer}" th:object="${transferDTO}" method="POST">
+    <label>Cuenta origen:</label>
+    <input type="text" th:field="*{fromAccount}" /><br/><br/>
+
+    <label>Cuenta destino:</label>
+    <input type="text" th:field="*{toAccount}" /><br/><br/>
+
+    <label>Monto:</label>
+    <input type="number" step="0.01" th:field="*{amount}" /><br/><br/>
+
+    <button type="submit">Transferir</button>
+</form>
+
+<div th:if="${transferResultDTO != null}">
+    <p th:if="${transferResultDTO.success}">Transferencia realizada con éxito.</p>
+    <p th:if="${!transferResultDTO.success}">Error: fondos insuficientes o cuentas inválidas.</p>
+</div>
+
+</body>
+</html>

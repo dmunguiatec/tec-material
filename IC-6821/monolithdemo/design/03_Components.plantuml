@@ -1,0 +1,24 @@
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title [Components] Monolith
+
+Person(customer, "Customer", "Owner of a savings account")
+
+ContainerDb(db, "Relational Database", "PostgreSQL", "Stores savings accounts data")
+Container_Boundary(monolith, "Monolith") {
+    Component(controller, "Transfer Controller", "Spring MVC Controller", "Reacts to bank transfer web page events")
+    Component(page, "Transfer Web Page", "HTML/Thymeleaf", "User interface for bank transfers")
+    Component(service, "Transfer Service", "Spring Transactional Service", "Implements application rules for bank transfers")
+    Component(repository, "Savings Account Repository", "Spring JPA", "Manages persistence and retrieval of bank accounts data models")
+
+    Rel(page, controller, "Submits", "HTTP POST")
+    Rel(controller, page, "Serves", "HTTP GET")
+    Rel(controller, service, "Calls", "Java method")
+    Rel(service, repository, "Calls", "Java method")
+    Rel(repository, db, "Reads from and writes to", "JDBC")
+}
+
+Rel(customer, controller, "Requests page", "Browser/HTTP")
+Rel(customer, page, "Interacts", "Browser/HTTP")
+@enduml

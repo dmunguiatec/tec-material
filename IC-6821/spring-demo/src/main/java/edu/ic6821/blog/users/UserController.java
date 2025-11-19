@@ -4,11 +4,9 @@ import edu.ic6821.blog.users.model.User;
 import io.swagger.v3.oas.annotations.Operation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -17,11 +15,11 @@ public class UserController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
-    @Autowired
-    private UserRepository userRepository;
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -36,7 +34,8 @@ public class UserController {
                     userDTO.email()
             );
 
-            return optUser.map(user -> new SignUpDTO(SignUpStatus.SIGN_UP_SUCCEEDED, user.getUsername(), user.getExtId()))
+            return optUser
+                    .map(user -> new SignUpDTO(SignUpStatus.SIGN_UP_SUCCEEDED, user.getUsername(), user.getExtId()))
                     .orElseGet(() -> new SignUpDTO(SignUpStatus.SIGN_UP_FAILED_USERNAME_EXISTS, userDTO.username(), null));
         } catch (Exception e) {
             logger.error(String.format("[signup] Unexpected error %s: %s", e.getClass(), e.getMessage()), e);
