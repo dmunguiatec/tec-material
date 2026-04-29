@@ -1,0 +1,13 @@
+@startuml C4_Elements
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+
+title [System Context] Banking
+
+Person(customer, "Customer", "Owner of a bank account")
+Person(officer, "Officer", "A bank service representative")
+System(bankapp, "Banking App", "Savings account management")
+
+Rel(customer, bankapp, "Makes transactions")
+Rel(officer, bankapp, "Makes transactions, Manages")
+@enduml
