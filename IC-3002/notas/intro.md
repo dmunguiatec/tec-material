@@ -136,7 +136,7 @@ Formalice como problema computacional los siguientes problemas:
 
 5. Calcular el largo de una lista.
 
-6. Las operaciones `push` y `pop` en una pila.
+6. Las operaciones `push` y `pop` en una pila de números enteros.
 
 7. Concatenar dos hileras.
 
@@ -145,10 +145,6 @@ Formalice como problema computacional los siguientes problemas:
 9. Determinar si una hilera es subhilera de otra.
 
 10. Encontrar un camino entre dos vértices de un grafo.
-
-11. Lanzar un dado.
-
-12. Buscar todos los registros en una colección que calcen con un criterio dado. Por ejemplo encontrar todas las personas de una colección cuyo primer nombre sea "María".
 
 ## Referencias ##
 
